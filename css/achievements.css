@@ -1,0 +1,60 @@
+/* ============================================================
+   ACHIEVEMENTS.CSS — Achievement toast popups + badges
+   ============================================================ */
+
+.achievements-container {
+  position: fixed;
+  bottom: 80px;
+  right: 24px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.achievement-toast {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--text-primary);
+  color: #fff;
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  box-shadow: var(--shadow-xl);
+  min-width: 260px;
+  max-width: 320px;
+  pointer-events: auto;
+  animation: achievementSlide 4s var(--ease-out) forwards;
+  border-left: 3px solid var(--accent-mid);
+}
+
+.achievement-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 6px rgba(61,154,135,0.5));
+}
+
+.achievement-body { min-width: 0; }
+
+.achievement-label {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: var(--accent-mid);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 2px;
+}
+
+.achievement-title {
+  font-family: var(--font-display);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.achievement-desc {
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 2px;
+}
