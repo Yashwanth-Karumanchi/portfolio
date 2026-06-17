@@ -74,7 +74,7 @@
     } else {
       navbar.classList.remove('scrolled');
     }
-    highlightNavLink();
+    highlightNavLinkFixed();
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
@@ -83,22 +83,6 @@
   // ── Active nav link on scroll ─────────────────────────────
   const sections  = document.querySelectorAll('section[id], div[id]');
   const navLinks  = document.querySelectorAll('.nav-link');
-
-  function highlightNavLink() {
-    let current = '';
-    sections.forEach(sec => {
-      const top = sec.offsetTop - var(--nav-height) - 80;
-      if (window.scrollY >= top) {
-        current = sec.getAttribute('id');
-      }
-    });
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === '#' + current) {
-        link.classList.add('active');
-      }
-    });
-  }
 
   // Fix: CSS variable in JS
   function navHeight() {
