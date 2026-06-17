@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   try {
     const { history, systemPrompt } = req.body;
 
-    const GEMINI_MODEL = 'gemini-1.5-flash';
+    const GEMINI_MODEL = 'models/gemini-3.1-flash-lite';
     const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${process.env.GEMINI_API_KEY}`;
 
     const body = {

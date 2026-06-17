@@ -7,7 +7,7 @@
 
   // ── Config ─────────────────────────────────────────────────
   const CHAT_API_URL = '/api/chat';
-  const GEMINI_MODEL = 'models/gemini-3.1-flash-lite';
+
   const SYSTEM_PROMPT = `You are an AI version of Yashwanth Karumanchi, answering questions about him in first person. Be warm, concise, and specific. Use "I" naturally.
 
 ABOUT ME:
