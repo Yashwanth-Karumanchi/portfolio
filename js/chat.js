@@ -1,15 +1,12 @@
 /* ============================================================
    CHAT.JS — AI chat widget powered by Gemini 3.1 Flash-Lite
-   Replace GEMINI_API_KEY with your actual key before deploying
    ============================================================ */
 
 (function () {
   'use strict';
 
   // ── Config ─────────────────────────────────────────────────
-  const GEMINI_API_KEY = 'YOUR_GEMINI_API_KEY_HERE';
-  const GEMINI_MODEL   = 'gemini-3.1-flash-lite-preview-06-17';
-  const GEMINI_URL     = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`;
+  const CHAT_API_URL = '/api/chat';
 
   const SYSTEM_PROMPT = `You are an AI version of Yashwanth Karumanchi, answering questions about him in first person. Be warm, concise, and specific. Use "I" naturally.
 
@@ -194,10 +191,13 @@ RULES:
         }
       };
 
-      const res = await fetch(GEMINI_URL, {
-        method:  'POST',
+      const res = await fetch(CHAT_API_URL, {
+        method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify(body)
+        body: JSON.stringify({
+          history,
+          systemPrompt: SYSTEM_PROMPT
+        })
       });
 
       if (!res.ok) {
@@ -205,9 +205,8 @@ RULES:
         throw new Error(err?.error?.message || `HTTP ${res.status}`);
       }
 
-      const data   = await res.json();
-      const reply  = data?.candidates?.[0]?.content?.parts?.[0]?.text
-                     || "Sorry, I couldn't generate a response. Please try again.";
+      const data = await res.json();
+      const reply = data.reply || "Sorry, I couldn't generate a response. Please try again.";
 
       thinking.remove();
       addMessage('ai', reply);
