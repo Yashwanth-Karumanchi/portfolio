@@ -1,37 +1,38 @@
 export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method not allowed" });
   }
 
   try {
+    if (!process.env.GEMINI_API_KEY) {
+      return res.status(500).json({ error: "Missing GEMINI_API_KEY" });
+    }
+
     const { history, systemPrompt } = req.body;
 
-    const GEMINI_MODEL = 'gemini-3.1-flash-lite';
-    const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${process.env.GEMINI_API_KEY}`;
-
-    const body = {
-      system_instruction: {
-        parts: [{ text: systemPrompt }]
-      },
-      contents: history,
-      generationConfig: {
-        maxOutputTokens: 300,
-        temperature: 0.75,
-        topP: 0.95
-      }
-    };
+    const GEMINI_MODEL = "gemini-3.1-flash-lite";
+    const GEMINI_URL =
+      `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${process.env.GEMINI_API_KEY}`;
 
     const geminiRes = await fetch(GEMINI_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body)
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        system_instruction: { parts: [{ text: systemPrompt }] },
+        contents: history,
+        generationConfig: {
+          maxOutputTokens: 300,
+          temperature: 0.75,
+          topP: 0.95
+        }
+      })
     });
 
     const data = await geminiRes.json();
 
     if (!geminiRes.ok) {
       return res.status(geminiRes.status).json({
-        error: data?.error?.message || 'Gemini API error'
+        error: data?.error?.message || "Gemini API error"
       });
     }
 
