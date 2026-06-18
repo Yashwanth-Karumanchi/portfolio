@@ -178,6 +178,23 @@
   box-shadow: var(--shadow-xl);
 }
 
+@keyframes graffitiPop {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.88);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.04);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
 /* 3D card tilt — applied via JS on mousemove */
 .card-tilt {
   transform-style: preserve-3d;

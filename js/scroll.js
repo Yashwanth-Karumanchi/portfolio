@@ -79,7 +79,7 @@
       border: 2px solid var(--accent);
       z-index: 9990;
       pointer-events: none;
-      animation: scaleIn 0.4s cubic-bezier(0.34,1.56,0.64,1) both;
+      animation: graffitiPop 0.4s cubic-bezier(0.34,1.56,0.64,1) both;
       text-align: center;
       letter-spacing: -0.02em;
     `;
