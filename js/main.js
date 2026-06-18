@@ -74,21 +74,25 @@
   const navList = document.getElementById('navLinks');
 
   if (hamburger && navList) {
-    hamburger.addEventListener('click', e => {
+    hamburger.onclick = function (e) {
       e.preventDefault();
       e.stopPropagation();
 
-      const open = navList.classList.toggle('open');
-      hamburger.classList.toggle('open', open);
-      hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
+      navList.classList.toggle('open');
+      hamburger.classList.toggle('open');
+
+      hamburger.setAttribute(
+        'aria-expanded',
+        navList.classList.contains('open') ? 'true' : 'false'
+      );
+    };
 
     navList.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
+      link.onclick = function () {
         navList.classList.remove('open');
         hamburger.classList.remove('open');
         hamburger.setAttribute('aria-expanded', 'false');
-      });
+      };
     });
   }
 
@@ -140,8 +144,19 @@
   // ── Smooth anchor ─────────────────────────────────────────
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) { e.preventDefault(); window.scrollTo({ top: target.offsetTop - NAV_H + 1, behavior: 'smooth' }); }
+      const href = a.getAttribute('href');
+
+      if (!href || href === '#') return;
+
+      const target = document.querySelector(href);
+
+      if (target) {
+        e.preventDefault();
+        window.scrollTo({
+          top: target.offsetTop - NAV_H + 1,
+          behavior: 'smooth'
+        });
+      }
     });
   });
 
