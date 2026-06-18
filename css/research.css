@@ -24,6 +24,11 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  scrollbar-width: none; 
+}
+
+.research-card-inner::-webkit-scrollbar {
+  display: none; /* Chrome/Safari — hides scrollbar but keeps scroll */
 }
 
 .research-badge {
