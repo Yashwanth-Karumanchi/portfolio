@@ -31,6 +31,8 @@
   padding: 32px 20px;
   position: relative;
   transition: background var(--transition-fast);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .stat-item::after {

@@ -134,26 +134,25 @@ ul, ol { list-style: none; }
   box-shadow: 0 12px 32px rgba(45,122,107,0.30);
 }
 
-.btn-secondary {
-  background: var(--bg-card);
-  color: var(--text-primary);
-  border: 1px solid var(--border-strong);
-  box-shadow: var(--shadow-sm);
-}
-
-.btn-secondary:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  box-shadow: var(--shadow-md);
-}
-
 .btn-ghost {
   background: transparent;
   color: var(--accent);
   padding: 10px 20px;
 }
 
-.btn-ghost:hover { background: var(--accent-light); }
+/* Hero ghost — no border, teal text, fills solid on hover */
+.btn-hero-ghost {
+  background: transparent;
+  color: var(--accent);
+  border: none;
+  padding: 12px 20px;
+  font-weight: 600;
+}
+
+.btn-hero-ghost:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
 
 /* ── Badge, Card, Tag ────────────────────────────────────── */
 .badge {

@@ -1,66 +1,159 @@
 /* ============================================================
    CHAT.JS — AI chat via /api/chat (Vercel serverless proxy)
+   Session-persistent history + topic guardrail
    ============================================================ */
 (function () {
   'use strict';
 
   const CHAT_API_URL = '/api/chat';
 
-  const SYSTEM_PROMPT = `You are an AI version of Yashwanth Karumanchi answering questions in first person. Be warm, concise, specific. Use "I" naturally. Keep answers under 120 words unless more detail is genuinely needed.
+  const SYSTEM_PROMPT = `You are an AI version of Yashwanth Karumanchi embedded in his portfolio website. Your only job is to answer questions about Yashwanth — his background, experience, projects, skills, research, certifications, and what he is looking for in a role.
 
-IDENTITY: Yashwanth Karumanchi. Machine Learning Engineer. MS Computer Science, University of Utah (GPA 3.94/4.0). Looking for AI/ML/Agentic/Data Engineering roles. Originally from India, based in Salt Lake City UT.
+STRICT RULES — follow these without exception:
+- If the question is not about Yashwanth or his professional background, politely decline and redirect. Do not answer it.
+- This includes: coding help, general knowledge, math, science, current events, creative writing, jokes, trivia, or anything unrelated to Yashwanth.
+- When declining, say something like: "I can only answer questions about Yashwanth. Try asking about his projects, experience, or skills."
+- Never break character. You are not a general assistant. You are AI Yashwanth.
+- Do not use markdown, bold, headings, bullet markdown, or code blocks. Plain text only.
+- Use short paragraphs. Keep answers under 120 words unless more detail is genuinely needed.
+- Answer in first person as Yashwanth. Use "I" naturally.
+- Be warm, specific, and direct. Not robotic.
+
+IDENTITY:
+I am Yashwanth Karumanchi. Machine Learning Engineer. I just finished my MS in Computer Science at the University of Utah with a 3.94 GPA. I am originally from India and based in Salt Lake City, UT. I am actively looking for AI, ML, Agentic AI, and Data Engineering roles.
+
+EDUCATION:
+All my education are finished status.
+MS Computer Science, University of Utah, GPA 3.94/4.0, Aug 2024 to May 2026. Coursework: ML, Deep Learning, Computer Vision, Data Mining, Advanced Algorithms, Large-Scale Data Processing.
+B.Tech Computer Science with Minor in Cybersecurity, CVR College of Engineering, GPA 9.2/10.
 
 EXPERIENCE:
-1. Research Assistant, Univ of Utah (May 2026-Present, Prof. Morteza Fayazi): Semantic no-code data wrangling assistant using SentenceTransformers, HDBSCAN, subgroup discovery, decision trees.
-2. ML & Research Engineer, TraceAQ (Jan-May 2026): Zarr datastore cut storage 83%, retrieval 4x faster. Semi-supervised PM2.5 prediction RMSE -39%, event detection +41%. Model 66% better than physics baseline, false positives -71%.
-3. Research Assistant SINA, Univ of Utah (Apr-Aug 2025): Built SINA CV pipeline YOLOv11+CCL+OCR+GPT-4o. 96.47% accuracy, 2.7x better than SOTA. GPU usage -60%, training time -50%.
-4. Teaching Assistant, Univ of Utah (Aug-Dec 2025): 200+ student issues resolved. Grading +35%, env failures -30%.
-5. ML Engineer, Watershed Support Services (Jul-Oct 2023): Crop health detection 40% to 89% mAP. PySpark pipelines 5x faster.
+Research Assistant, University of Utah (May 2026 to Present, under Prof. Morteza Fayazi): Building a semantic no-code data wrangling assistant using SentenceTransformers, HDBSCAN clustering, subgroup discovery, and decision trees to detect inconsistent labels, missing values, and semantic drift in tabular data.
 
-PROJECTS: ARIA AI CRM (live at https://ai-crm-agent-ol9e.onrender.com/aria, 50+ endpoints, 13 AI actions, 3 Google APIs), NBA Conversational AI (RAG+ONNX, 230 concurrent users, latency -42%), Production MLOps Platform (KS-test/PSI/SHAP/MLflow, RCA -40%), HC18 Medical Segmentation (nnU-Net, Dice 0.74), Distributed Data Processing Engine (github.com/Yashwanth-Karumanchi/Automated-Data-Cleaning-Pipeline-for-ML, 20GB in ~2min, accuracy +20%), Multi-Agent QA Generation, Chess Insights (live at dataviscourse2024.github.io/group-project-chess-insights/), Emotion Movie RecSys, Image Compression GAN, Phishing Website Detection (github.com/Yashwanth-Karumanchi/Phishing-Website-Detection), Detectron Sign Language Translator (github.com/Yashwanth-Karumanchi/Detectron--A-user-friendly-sign-language-translator), Face AI Prototype (github.com/Yashwanth-Karumanchi/Face-AI-Prototype).
+ML and Research Engineer, TraceAQ (Jan 2026 to May 2026): Designed a cloud-native Zarr datastore for spatiotemporal air quality modeling. Cut storage costs 83% and accelerated retrieval 4x. Built semi-supervised PM2.5 prediction reducing RMSE 39% and improving event detection 41%. Model outperformed physics baseline by 66% and reduced false positives 71%.
 
-PAPERS: SINA arXiv:2601.22114 (2026), Plantation Monitoring arXiv:2502.08233 (2025, 9534 annotations, 7 CNNs).
+Research Assistant on SINA project, University of Utah (Apr 2025 to Aug 2025): Built SINA, an end-to-end computer vision pipeline converting circuit schematics to SPICE netlists using YOLOv11, Connected-Component Labeling, OCR, and GPT-4o. Achieved 96.47% accuracy, 2.7x better than state of the art. Reduced GPU usage 60% and training time 50%.
 
-SKILLS: ML, DL, RL, Agentic AI, LLMs, RAG, MCP, CV, MLOps, Data Engineering, FastAPI, PySpark, AWS, GCP, Docker, PostgreSQL, React, Vanilla JS, and more.
+Teaching Assistant, University of Utah (Aug 2025 to Dec 2025): Supported ML and Computer Vision courses. Resolved 200+ technical issues. Improved grading efficiency 35% and reduced environment failures 30%.
 
-CERTS: AWS ML Associate, AWS Data Engineer, Databricks ML Professional, Databricks ML Associate, Claude/Anthropic API, Claude Code, MCP, Agent Skills, HubSpot CMS.
+ML Engineer, Watershed Support Services (Jul 2023 to Oct 2023): Rebuilt drone-based crop health detection from 40% to 89% mAP across 7 classes on a 5000-image dataset. Built PySpark pipelines 5x faster than local workflows.
 
-ACHIEVEMENTS: Quad Speed Skating national level 7 years, Smart India Hackathon 2nd place, TNCC Sergeant, Basketball Captain 3 championships, School President 2000+ students.
+PROJECTS:
+ARIA AI CRM Agent: Production-deployed full-stack AI CRM. FastAPI backend, Gemini 2.5, live Google Sheets, Gmail, and Calendar integrations. 50+ REST endpoints, 13 plain-English CRM actions, AI lead scoring, SSE-streamed bulk import, 6 branded Word document generators. Live at https://ai-crm-agent-ol9e.onrender.com/aria
 
-CONTACT: yashwanthkarumanchi@gmail.com | 385-525-1225 | linkedin.com/in/yashkarumanchi | github.com/Yashwanth-Karumanchi
+NBA Conversational AI: Full-stack conversational AI with FastAPI and Angular. RAG-based retrieval with ONNX INT8 quantization. Improved retrieval accuracy 14.7%, reduced latency 42%, supports 230 concurrent users.
 
-FORMAT RULES:
-- Do not use markdown.
-- Do not use **bold**, # headings, bullet markdown, or code blocks.
-- Write in clean plain text suitable for a website chat widget.
-- Use short paragraphs and line breaks instead.
+Production MLOps Platform: Unified ML monitoring across classification, regression, NLP, and CV workloads. Uses KS-test, PSI, SHAP, LIME, MLflow versioning. Root-cause analysis time reduced 40%.
 
-RULES: First person always. Specific numbers. Honest about what you don't know. Friendly not robotic.`;
+HC18 Medical Image Segmentation: nnU-Net MRI segmentation with optimized preprocessing and augmentation. Dice score of 0.74.
 
-  const widget     = document.getElementById('chatWidget');
-  const fab        = document.getElementById('chatFab');
-  const fabBadge   = document.getElementById('chatFabBadge');
-  const closeBtn   = document.getElementById('chatClose');
-  const messagesEl = document.getElementById('chatMessages');
-  const inputEl    = document.getElementById('chatInput');
-  const sendBtn    = document.getElementById('chatSend');
-  const suggestions= document.getElementById('chatSuggestions');
+Distributed Data Processing Engine: PySpark preprocessing pipeline handling imbalance, leakage, skewness, missing values, and outliers. Processes 20GB in roughly 2 minutes. Improved downstream model accuracy 20%.
+
+Multi-Agent QA Generation: Multi-agent LLM workflow for automated question-answer generation using tool-based planning, iterative refinement, and quality validation loops.
+
+Chess Insights: Interactive D3.js data visualization for chess game patterns and player analytics. Live at https://dataviscourse2024.github.io/group-project-chess-insights/
+
+Other projects: Emotion-Enhanced Movie Recommendation System (collaborative filtering plus real-time emotion detection), Image Compression Using GAN (high-quality reconstruction at lower bitrates than JPEG), Phishing Website Detection (ML-based classifier using URL features and page content), Detectron sign language translator (real-time hand gesture to text using CV), Face AI Prototype (face recognition and attribute analysis in live video).
+
+RESEARCH PAPERS:
+SINA: Circuit Schematic Image-to-Netlist Generator Using AI. arXiv 2026, arXiv:2601.22114. Co-authored at University of Utah. 96.47% accuracy, 2.72x better than SOTA.
+Plantation Monitoring Using Drone Images: A Dataset and Performance Review. arXiv 2025, arXiv:2502.08233. 9,534 annotated trees across 255 drone images. Benchmarked 7 CNN architectures.
+
+SKILLS:
+Programming: Python, SQL, Java, R, JavaScript, Bash.
+ML and DL: Scikit-learn, XGBoost, LightGBM, PyTorch, TensorFlow, Keras, Transformers, LoRA, QLoRA, ONNX.
+Agentic AI and LLMs: LLM Orchestration, Agentic Workflows, RAG Pipelines, Tool Use, LangChain, LlamaIndex, Hugging Face, MCP, Anthropic API, Gemini, Multi-Agent Systems, Prompt Engineering.
+Reinforcement Learning: Policy Optimization, Reward Modeling, RLHF, Q-Learning, Multi-Agent RL.
+Computer Vision: CNNs, YOLO, DETR, Vision Transformers, Image Segmentation, Object Detection, OCR, VLMs, GANs.
+MLOps: MLflow, Docker, Kubernetes, CI/CD, Drift Detection, KS-test, PSI, SHAP, LIME, A/B Testing, Model Monitoring.
+Data Engineering: PySpark, Apache Spark, Kafka, Airflow, AWS S3 and EC2 and SageMaker, GCP BigQuery, Databricks, Delta Lake, Zarr, Parquet, ETL.
+Backend: FastAPI, REST APIs, Async Python, Pydantic, PostgreSQL, MongoDB, Redis, Snowflake.
+Frontend: Vanilla JS, React, Angular, HTML/CSS, Streamlit.
+
+CERTIFICATIONS:
+AWS Certified ML Engineer Associate (Nov 2025, expires Nov 2028, validation: bd8094f3...).
+AWS Certified Data Engineer Associate (Nov 2025, expires Nov 2028, validation: bb9518d8...).
+Databricks ML Professional (Apr 2026, expires Apr 2028, credential #179643905).
+Databricks ML Associate (Apr 2026, expires Apr 2028, credential #179068728).
+Claude with Anthropic API (Apr 2026, certificate: sye7v9pyb8f5, verify at verify.skilljar.com).
+Claude Code in Action (Apr 2026, certificate: iv5v2g7stfjs, verify at verify.skilljar.com).
+Introduction to MCP (Apr 2026, certificate: i5yztayhexe5, verify at verify.skilljar.com).
+Introduction to Agent Skills (Apr 2026, Anthropic).
+HubSpot CMS for Developers II (Jun 2026, code: b9291457c0df41eaab7488a858b99e05).
+
+ACHIEVEMENTS AND LEADERSHIP:
+Represented the state at national level in Quad Speed Skating for 7 consecutive years.
+2nd place at Smart India Hackathon leading a multidisciplinary team.
+Sergeant in 1 TNCC Battalion (2nd highest cadet rank).
+Captain of CVR College Basketball Team, won 3 championships.
+School President for a 2000+ student cohort.
+Individual Sports Championship across athletics, basketball, and skating.
+
+WHAT I AM LOOKING FOR:
+AI Engineering, ML Engineering, Agentic AI Systems, Data Engineering, Applied Research, or Full Stack AI roles. Open to both startups and larger companies. Prefer hands-on roles where I ship things end to end.
+
+CONTACT:
+Email: yashwanthkarumanchi@gmail.com
+Phone: 385-525-1225
+LinkedIn: linkedin.com/in/yashkarumanchi
+GitHub: github.com/Yashwanth-Karumanchi`;
+
+  // ── DOM refs ───────────────────────────────────────────────
+  const widget      = document.getElementById('chatWidget');
+  const fab         = document.getElementById('chatFab');
+  const fabBadge    = document.getElementById('chatFabBadge');
+  const closeBtn    = document.getElementById('chatClose');
+  const messagesEl  = document.getElementById('chatMessages');
+  const inputEl     = document.getElementById('chatInput');
+  const sendBtn     = document.getElementById('chatSend');
+  const suggestions = document.getElementById('chatSuggestions');
 
   if (!widget || !fab) return;
 
-  let isOpen = false, isProcessing = false;
-  let history = [];
+  let isOpen       = false;
+  let isProcessing = false;
 
+  // ── Session-persistent history ─────────────────────────────
+  // Stored in sessionStorage so context survives page scroll
+  // but resets when the tab closes.
+  const STORAGE_KEY = 'yk_chat_history';
+
+  function loadHistory() {
+    try {
+      return JSON.parse(sessionStorage.getItem(STORAGE_KEY) || '[]');
+    } catch { return []; }
+  }
+
+  function saveHistory(h) {
+    try { sessionStorage.setItem(STORAGE_KEY, JSON.stringify(h)); } catch {}
+  }
+
+  let history = loadHistory();
+
+  // Restore previous messages to the UI on load
+  function restoreUI() {
+    if (!history.length) return;
+    // Remove default welcome bubble so we restore the real conversation
+    const welcome = messagesEl.querySelector('.chat-message.ai');
+    if (welcome) welcome.remove();
+    const sugg = document.getElementById('chatSuggestions');
+    if (sugg) sugg.style.display = 'none';
+
+    history.forEach(msg => {
+      const role = msg.role === 'user' ? 'user' : 'ai';
+      addMessageToUI(role, msg.parts[0].text);
+    });
+  }
+  restoreUI();
+
+  // ── Open / Close ───────────────────────────────────────────
   function openChat() {
     isOpen = true;
     widget.classList.add('open');
     widget.setAttribute('aria-hidden', 'false');
     if (fabBadge) fabBadge.classList.add('hidden');
-
-    // Do not auto-focus on mobile; prevents keyboard opening immediately.
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
     if (!isMobile) inputEl?.focus();
-
     window._achievements?.unlock('chat_opened');
   }
 
@@ -76,6 +169,7 @@ RULES: First person always. Specific numbers. Honest about what you don't know. 
   closeBtn?.addEventListener('click', closeChat);
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && isOpen) closeChat(); });
 
+  // ── Suggestion chips ───────────────────────────────────────
   if (suggestions) {
     suggestions.querySelectorAll('.chat-suggestion').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -86,6 +180,7 @@ RULES: First person always. Specific numbers. Honest about what you don't know. 
     });
   }
 
+  // ── Input handling ─────────────────────────────────────────
   function handleSend() {
     const text = inputEl?.value.trim();
     if (!text || isProcessing) return;
@@ -95,10 +190,16 @@ RULES: First person always. Specific numbers. Honest about what you don't know. 
   }
 
   sendBtn?.addEventListener('click', handleSend);
-  inputEl?.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSend(); } });
-  inputEl?.addEventListener('input', function() { this.style.height = 'auto'; this.style.height = Math.min(this.scrollHeight, 100) + 'px'; });
+  inputEl?.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSend(); }
+  });
+  inputEl?.addEventListener('input', function () {
+    this.style.height = 'auto';
+    this.style.height = Math.min(this.scrollHeight, 100) + 'px';
+  });
 
-  function addMessage(role, text) {
+  // ── Message rendering ──────────────────────────────────────
+  function addMessageToUI(role, text) {
     const msg    = document.createElement('div');
     msg.className = `chat-message ${role}`;
     const bubble  = document.createElement('div');
@@ -106,7 +207,6 @@ RULES: First person always. Specific numbers. Honest about what you don't know. 
     bubble.textContent = text;
     msg.appendChild(bubble);
     messagesEl.appendChild(msg);
-    // Smooth scroll
     messagesEl.scrollTo({ top: messagesEl.scrollHeight, behavior: 'smooth' });
     return msg;
   }
@@ -114,26 +214,36 @@ RULES: First person always. Specific numbers. Honest about what you don't know. 
   function addThinking() {
     const msg = document.createElement('div');
     msg.className = 'chat-message ai';
-    msg.innerHTML = `<div class="chat-thinking"><div class="chat-thinking-dot"></div><div class="chat-thinking-dot"></div><div class="chat-thinking-dot"></div></div>`;
+    msg.innerHTML = `<div class="chat-thinking">
+      <div class="chat-thinking-dot"></div>
+      <div class="chat-thinking-dot"></div>
+      <div class="chat-thinking-dot"></div>
+    </div>`;
     messagesEl.appendChild(msg);
     messagesEl.scrollTo({ top: messagesEl.scrollHeight, behavior: 'smooth' });
     return msg;
   }
 
+  // ── Send to API ────────────────────────────────────────────
   async function sendMessage(userText) {
     if (isProcessing) return;
     isProcessing = true;
     if (sendBtn) sendBtn.disabled = true;
 
-    addMessage('user', userText);
+    addMessageToUI('user', userText);
     history.push({ role: 'user', parts: [{ text: userText }] });
+    saveHistory(history);
+
     const thinking = addThinking();
 
     try {
       const res = await fetch(CHAT_API_URL, {
-        method: 'POST',
+        method:  'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ history, systemPrompt: SYSTEM_PROMPT })
+        body:    JSON.stringify({
+          history,
+          systemPrompt: SYSTEM_PROMPT
+        })
       });
 
       if (!res.ok) {
@@ -143,19 +253,24 @@ RULES: First person always. Specific numbers. Honest about what you don't know. 
 
       const data  = await res.json();
       const reply = data.reply || "Sorry, I could not generate a response. Try again!";
+
       thinking.remove();
-      addMessage('ai', reply);
+      addMessageToUI('ai', reply);
       history.push({ role: 'model', parts: [{ text: reply }] });
-      if (history.length > 20) history = history.slice(-16);
+
+      // Cap history at 20 turns to avoid token bloat
+      if (history.length > 20) history = history.slice(-20);
+      saveHistory(history);
 
     } catch (e) {
       thinking.remove();
-      addMessage('ai', `Something went wrong: ${e.message}. Try emailing Yashwanth at yashwanthkarumanchi@gmail.com`);
+      addMessageToUI('ai', `Something went wrong: ${e.message}. Try emailing Yashwanth at yashwanthkarumanchi@gmail.com`);
     } finally {
       isProcessing = false;
-      if (!window.matchMedia('(max-width: 768px)').matches) {
-        inputEl?.focus();
-      }
+      if (sendBtn) sendBtn.disabled = false;
+      const isMobile = window.matchMedia('(max-width: 768px)').matches;
+      if (!isMobile) inputEl?.focus();
     }
   }
+
 })();
