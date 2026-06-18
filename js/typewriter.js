@@ -39,7 +39,7 @@
 
   const words      = Array.from(wordsEl.querySelectorAll('.hero-role-word'));
   let   current    = 0;
-  const rotateDelay = 2800; // ms per word
+  const rotateDelay = 5500; // ms per word
 
   function rotateWord() {
     const prev = words[current];
@@ -49,7 +49,7 @@
     // Exit current
     prev.classList.remove('active');
     prev.classList.add('exit');
-    setTimeout(() => prev.classList.remove('exit'), 400);
+    setTimeout(() => prev.classList.remove('exit'), 900);
 
     // Enter next
     next.classList.add('active');

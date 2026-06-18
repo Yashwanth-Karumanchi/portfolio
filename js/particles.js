@@ -112,10 +112,10 @@
         const mdB = Math.hypot(mouse.x - b.x, mouse.y - b.y);
         const near = Math.min(mdA, mdB) < CFG.mouseRadius;
         const energyBoost = (a.energy + b.energy) * 0.5;
-        const alpha = (1 - d / CFG.maxDist) * (near ? 0.45 : 0.10) + energyBoost * 0.3;
+        const alpha = (1 - d / CFG.maxDist) * (near ? 0.22 : 0.045) + energyBoost * 0.12;
 
         ctx.beginPath();
-        ctx.strokeStyle = `rgba(${CFG.color},${Math.min(alpha, 0.7)})`;
+        ctx.strokeStyle = `rgba(${CFG.color},${Math.min(alpha, 0.28)})`;
         ctx.lineWidth   = near ? 1.4 : 0.7;
         ctx.moveTo(a.x, a.y);
         ctx.lineTo(b.x, b.y);
@@ -127,7 +127,7 @@
           const px  = a.x + (b.x - a.x) * t;
           const py  = a.y + (b.y - a.y) * t;
           ctx.beginPath();
-          ctx.fillStyle = `rgba(${CFG.color},${energyBoost * 0.8})`;
+          ctx.fillStyle = `rgba(${CFG.color},${energyBoost * 0.25})`;
           ctx.arc(px, py, 2, 0, Math.PI * 2);
           ctx.fill();
         }
@@ -140,11 +140,11 @@
       const r   = n.r * pf;
       const md  = Math.hypot(mouse.x - n.x, mouse.y - n.y);
       const near = md < CFG.mouseRadius;
-      const alpha = near ? 0.8 + (1 - md / CFG.mouseRadius) * 0.2 : 0.45;
+      const alpha = near ? 0.35 + (1 - md / CFG.mouseRadius) * 0.12 : 0.18;
 
       if (near || n.energy > 0.1) {
         const glow = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, r * 5);
-        glow.addColorStop(0, `rgba(${CFG.color},${0.25 + n.energy * 0.3})`);
+        glow.addColorStop(0, `rgba(${CFG.color},${0.08 + n.energy * 0.12})`);
         glow.addColorStop(1, `rgba(${CFG.color},0)`);
         ctx.beginPath();
         ctx.fillStyle = glow;
