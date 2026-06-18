@@ -62,19 +62,21 @@
 
   function showGraffiti() {
     const g = document.createElement('div');
+
     g.style.cssText = `
       position: fixed;
-      bottom: 60px;
+      bottom: 80px;
       left: 50%;
-      transform: translateX(-50%) rotate(-4deg);
+      width: min(420px, calc(100vw - 32px));
+      transform: translateX(-50%);
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 28px;
+      font-size: 22px;
       font-weight: 700;
-      color: var(--accent);
-      background: var(--bg-card);
-      padding: 12px 28px;
+      color: var(--text-primary);
+      background: #fff;
+      padding: 14px 22px;
       border-radius: 16px;
-      box-shadow: 0 8px 32px rgba(45,122,107,0.25);
+      box-shadow: 0 8px 32px rgba(45,122,107,0.22);
       border: 2px solid var(--accent);
       z-index: 9990;
       pointer-events: none;
@@ -82,12 +84,15 @@
       text-align: center;
       letter-spacing: -0.02em;
     `;
-    g.innerHTML = '🎉 You explored everything!<br><span style="font-size:13px;font-weight:400;color:var(--text-muted);font-family:var(--font-mono)">Reach out — I\'d love to chat.</span>';
+
+    g.innerHTML = '🎉 You explored everything!<br><span style="font-size:13px;font-weight:400;color:var(--text-muted);font-family:var(--font-mono)">Reach out — I\\'d love to chat.</span>';
+
     document.body.appendChild(g);
+
     setTimeout(() => {
       g.style.transition = 'opacity 0.5s, transform 0.5s';
-      g.style.opacity    = '0';
-      g.style.transform  = 'translateX(-50%) rotate(-4deg) translateY(20px)';
+      g.style.opacity = '0';
+      g.style.transform = 'translateX(-50%) translateY(20px)';
       setTimeout(() => g.remove(), 600);
     }, 3500);
   }
