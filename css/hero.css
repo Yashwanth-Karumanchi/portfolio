@@ -59,7 +59,7 @@
 /* ── Name ────────────────────────────────────────────────── */
 .hero-name {
   font-family: var(--font-display);
-  font-size: clamp(42px, 7vw, 82px);
+  font-size: clamp(36px, 7vw, 82px);
   font-weight: 700;
   color: var(--text-primary);
   line-height: 1.05;
