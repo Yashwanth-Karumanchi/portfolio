@@ -42,32 +42,37 @@
     if (ring) ring.remove();
   }
 
-  // ── Navbar scroll ──────────────────────────────────────────
+  // ── Navbar scroll + Active nav ─────────────────────────────
   const navbar = document.getElementById('navbar');
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const NAV_H = parseInt(
+    getComputedStyle(document.documentElement).getPropertyValue('--nav-height')
+  ) || 68;
+
+  function highlightNav() {
+    let current = '';
+
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - NAV_H - 80) {
+        current = sec.id;
+      }
+    });
+
+    navLinks.forEach(l => {
+      l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+    });
+  }
 
   function onScroll() {
-    if (!navbar) return;
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
+    if (navbar) {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }
     highlightNav();
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
-
-  // ── Active nav ─────────────────────────────────────────────
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
-  const NAV_H    = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-height')) || 68;
-
-  function highlightNav() {
-    let current = '';
-    sections.forEach(sec => {
-      if (window.scrollY >= sec.offsetTop - NAV_H - 80) current = sec.id;
-    });
-    navLinks.forEach(l => {
-      l.classList.toggle('active', l.getAttribute('href') === '#' + current);
-    });
-  }
 
   // ── Hamburger ──────────────────────────────────────────────
   const hamburger = document.getElementById('hamburger');
