@@ -203,16 +203,16 @@
 }
 
 .navbar {
-  z-index: 2000;
+  z-index: 5000;
 }
 
 .navbar-hamburger {
   position: relative;
-  z-index: 2002;
+  z-index: 5002;
   pointer-events: auto;
   touch-action: manipulation;
 }
 
 .navbar-links {
-  z-index: 2001;
+  z-index: 5001;
 }

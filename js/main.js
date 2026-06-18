@@ -70,39 +70,42 @@
   }
 
   // ── Hamburger ──────────────────────────────────────────────
-const hamburger = document.getElementById('hamburger');
-const navList   = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  const navList   = document.getElementById('navLinks');
 
-if (hamburger && navList) {
-  hamburger.addEventListener('click', e => {
-    e.preventDefault();
-    e.stopPropagation();
+  if (hamburger && navList) {
+    function toggleMenu(e) {
+      e.preventDefault();
+      e.stopPropagation();
 
-    const open = !navList.classList.contains('open');
+      const open = !navList.classList.contains('open');
 
-    navList.classList.toggle('open', open);
-    hamburger.classList.toggle('open', open);
-    hamburger.setAttribute('aria-expanded', String(open));
-  });
+      navList.classList.toggle('open', open);
+      hamburger.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', String(open));
+    }
 
-  navList.addEventListener('click', e => {
-    e.stopPropagation();
-  });
+    hamburger.addEventListener('click', toggleMenu);
+    hamburger.addEventListener('touchend', toggleMenu);
 
-  navList.querySelectorAll('.nav-link').forEach(l => {
-    l.addEventListener('click', () => {
+    navList.addEventListener('click', e => {
+      e.stopPropagation();
+    });
+
+    navList.querySelectorAll('.nav-link').forEach(l => {
+      l.addEventListener('click', () => {
+        navList.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('click', () => {
       navList.classList.remove('open');
       hamburger.classList.remove('open');
       hamburger.setAttribute('aria-expanded', 'false');
     });
-  });
-
-  document.addEventListener('click', () => {
-    navList.classList.remove('open');
-    hamburger.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', 'false');
-  });
-}
+  }
 
   // ── Chat toggle (navbar button AND logo triple click) ──────
   // Chat open/close is handled in chat.js via chatTrigger click
@@ -158,11 +161,3 @@ if (hamburger && navList) {
   });
 
 })();
-
-// ── Mobile project card counters ───────────────────────────
-const projectCards = document.querySelectorAll('.projects-grid .project-card');
-
-projectCards.forEach((card, index) => {
-  card.dataset.cardIndex = index + 1;
-  card.dataset.cardTotal = projectCards.length;
-});

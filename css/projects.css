@@ -156,21 +156,6 @@
     position: relative;
   }
 
-  .project-card::after {
-    content: attr(data-card-index) " of " attr(data-card-total);
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--accent-dark);
-    background: var(--accent-light);
-    border: 1px solid rgba(45,122,107,0.18);
-    border-radius: var(--radius-full);
-    padding: 4px 9px;
-    z-index: 2;
-  }
-
   .projects-grid::-webkit-scrollbar {
     display: none;
   }
