@@ -201,3 +201,18 @@
   .visitor-badge { display: none; }
   .btn-chat-trigger { display: none; }
 }
+
+.navbar {
+  z-index: 2000;
+}
+
+.navbar-hamburger {
+  position: relative;
+  z-index: 2002;
+  pointer-events: auto;
+  touch-action: manipulation;
+}
+
+.navbar-links {
+  z-index: 2001;
+}

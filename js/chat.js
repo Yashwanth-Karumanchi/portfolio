@@ -56,7 +56,11 @@ RULES: First person always. Specific numbers. Honest about what you don't know. 
     widget.classList.add('open');
     widget.setAttribute('aria-hidden', 'false');
     if (fabBadge) fabBadge.classList.add('hidden');
-    inputEl?.focus();
+
+    // Do not auto-focus on mobile; prevents keyboard opening immediately.
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    if (!isMobile) inputEl?.focus();
+
     window._achievements?.unlock('chat_opened');
   }
 
@@ -149,8 +153,9 @@ RULES: First person always. Specific numbers. Honest about what you don't know. 
       addMessage('ai', `Something went wrong: ${e.message}. Try emailing Yashwanth at yashwanthkarumanchi@gmail.com`);
     } finally {
       isProcessing = false;
-      if (sendBtn) sendBtn.disabled = false;
-      inputEl?.focus();
+      if (!window.matchMedia('(max-width: 768px)').matches) {
+        inputEl?.focus();
+      }
     }
   }
 })();
