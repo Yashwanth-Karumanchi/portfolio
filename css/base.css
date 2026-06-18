@@ -247,7 +247,7 @@ ul, ol { list-style: none; }
   transform: translate(-50%, -50%);
   opacity: 0;
   mix-blend-mode: multiply;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s, width 0.2s, height 0.2s;
 }
 
 .cursor-ring {
@@ -263,8 +263,9 @@ ul, ol { list-style: none; }
   transition: opacity 0.3s, width 0.2s, height 0.2s;
 }
 
-body:hover .cursor-dot,
-body:hover .cursor-ring { opacity: 0.7; }
+/* Only show after first mouse move — toggled via JS class */
+body.cursor-active .cursor-dot  { opacity: 0.7; }
+body.cursor-active .cursor-ring { opacity: 0.5; }
 
 /* ── Page loader ──────────────────────────────────────────── */
 .page-loader {

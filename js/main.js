@@ -15,12 +15,19 @@
   const ring = document.getElementById('cursorRing');
   const isTouch = window.matchMedia('(hover: none)').matches;
   let dotX = 0, dotY = 0, ringX = 0, ringY = 0;
+  let cursorReady = false;
 
   if (!isTouch && dot && ring) {
     document.addEventListener('mousemove', e => {
       dotX = e.clientX; dotY = e.clientY;
       dot.style.left = dotX + 'px';
       dot.style.top  = dotY + 'px';
+
+      // Only show cursor after first real mouse movement
+      if (!cursorReady) {
+        cursorReady = true;
+        document.body.classList.add('cursor-active');
+      }
     });
 
     (function animRing() {
@@ -30,20 +37,6 @@
       ring.style.top  = ringY + 'px';
       requestAnimationFrame(animRing);
     })();
-
-    const interactives = 'a, button, .skill-tag, .project-card, .cert-card';
-    document.addEventListener('mouseover', e => {
-      if (e.target.closest(interactives)) {
-        ring.style.width = '44px'; ring.style.height = '44px'; ring.style.opacity = '0.5';
-        dot.style.opacity = '0';
-      }
-    });
-    document.addEventListener('mouseout', e => {
-      if (e.target.closest(interactives)) {
-        ring.style.width = '32px'; ring.style.height = '32px'; ring.style.opacity = '0.7';
-        dot.style.opacity = '0.7';
-      }
-    });
   } else {
     if (dot)  dot.remove();
     if (ring) ring.remove();
