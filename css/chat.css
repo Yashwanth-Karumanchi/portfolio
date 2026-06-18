@@ -337,8 +337,13 @@
 @media (max-width: 480px) {
   .chat-widget {
     right: 12px;
-    bottom: 80px;
     width: calc(100vw - 24px);
+
+    /* keep below navbar */
+    top: calc(var(--nav-height) + 12px);
+    bottom: 80px;
+
+    max-height: none;
   }
 
   .chat-fab {
