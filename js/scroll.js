@@ -108,46 +108,4 @@
   }, { threshold: 0.3 });
   document.querySelectorAll('section[id]').forEach(s => sectionObs.observe(s));
 
-  // ── Active navbar link / scrollspy ─────────────────────────
-  const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
-
-  function updateActiveNavLink() {
-    const sections = Array.from(navLinks)
-      .map((link) => {
-        const sectionId = link.getAttribute('href');
-        return sectionId ? document.querySelector(sectionId) : null;
-      })
-      .filter(Boolean);
-
-    let currentSectionId = '';
-
-    const scrollPosition = window.scrollY + 120;
-    const nearBottom =
-      window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 80;
-
-    if (nearBottom) {
-      currentSectionId = 'contact';
-    } else {
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionBottom = sectionTop + section.offsetHeight;
-
-        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-          currentSectionId = section.id;
-        }
-      });
-    }
-
-    navLinks.forEach((link) => {
-      link.classList.remove('active');
-
-      if (link.getAttribute('href') === `#${currentSectionId}`) {
-        link.classList.add('active');
-      }
-    });
-  }
-
-  window.addEventListener('scroll', updateActiveNavLink, { passive: true });
-  window.addEventListener('load', updateActiveNavLink);
-  updateActiveNavLink();
 })();
