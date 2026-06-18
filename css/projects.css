@@ -14,7 +14,6 @@
   position: relative;
   cursor: default;
   transition: all var(--transition-base);
-  height: 100%;
 }
 
 .project-card.featured {
@@ -31,11 +30,6 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  scrollbar-width: none;
-}
-
-.project-card-inner::-webkit-scrollbar {
-  display: none; /* Chrome/Safari — hides scrollbar but keeps scroll */
 }
 
 .project-header {
