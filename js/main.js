@@ -74,6 +74,12 @@
   const navList   = document.getElementById('navLinks');
 
   if (hamburger && navList) {
+    function closeMenu() {
+      navList.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+
     function toggleMenu(e) {
       e.preventDefault();
       e.stopPropagation();
@@ -86,25 +92,16 @@
     }
 
     hamburger.addEventListener('click', toggleMenu);
-    hamburger.addEventListener('touchend', toggleMenu);
 
     navList.addEventListener('click', e => {
       e.stopPropagation();
     });
 
     navList.querySelectorAll('.nav-link').forEach(l => {
-      l.addEventListener('click', () => {
-        navList.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-      });
+      l.addEventListener('click', closeMenu);
     });
 
-    document.addEventListener('click', () => {
-      navList.classList.remove('open');
-      hamburger.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
-    });
+    document.addEventListener('click', closeMenu);
   }
 
   // ── Chat toggle (navbar button AND logo triple click) ──────

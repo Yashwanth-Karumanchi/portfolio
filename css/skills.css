@@ -96,3 +96,24 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+  .skills-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 18px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .skills-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .skills-group {
+    flex: 0 0 86%;
+    scroll-snap-align: center;
+  }
+}

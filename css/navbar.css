@@ -202,17 +202,12 @@
   .btn-chat-trigger { display: none; }
 }
 
-.navbar {
-  z-index: 5000;
-}
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
 
-.navbar-hamburger {
-  position: relative;
-  z-index: 5002;
-  pointer-events: auto;
-  touch-action: manipulation;
-}
-
-.navbar-links {
-  z-index: 5001;
+  .navbar-links.open {
+    display: flex;
+  }
 }
