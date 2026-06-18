@@ -53,16 +53,35 @@
   function highlightNav() {
     let current = '';
 
-    sections.forEach(sec => {
-      if (window.scrollY >= sec.offsetTop - NAV_H - 80) {
-        current = sec.id;
-      }
-    });
+    const nearBottom =
+    window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 80;
 
-    navLinks.forEach(l => {
-      l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+    if (nearBottom) {
+    current = 'contact';
+    } else {
+    sections.forEach(sec => {
+    if (window.scrollY >= sec.offsetTop - NAV_H - 80) {
+    current = sec.id;
+    }
     });
-  }
+    }
+
+    navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    const isSectionLink = href && href.startsWith('#');
+
+    ```
+    if (!isSectionLink) {
+      link.classList.remove('active');
+      return;
+    }
+
+    link.classList.toggle('active', href === '#' + current);
+    ```
+
+    });
+    }
+
 
   function onScroll() {
     if (navbar) {
