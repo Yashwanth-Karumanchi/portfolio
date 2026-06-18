@@ -83,12 +83,13 @@
       text-align: center;
       letter-spacing: -0.02em;
     `;
-    g.innerHTML = '🎉 You explored everything!<br><span style="font-size:13px;font-weight:400;color:var(--text-muted);font-family:var(--font-mono)">Reach out — I\'d love to chat.</span>';
+    g.innerHTML = '🎉 You explored everything!<br><span style="font-size:13px;font-weight:400;color:var(--text-muted);font-family:var(--font-mono)">Reach out — I\\'d love to chat.</span>';
+
     document.body.appendChild(g);
     setTimeout(() => {
       g.style.transition = 'opacity 0.5s, transform 0.5s';
-      g.style.opacity    = '0';
-      g.style.transform  = 'translateX(-50%) rotate(-4deg) translateY(20px)';
+      g.style.opacity = '0';
+      g.style.transform = 'translateX(-50%) translateY(20px)';
       setTimeout(() => g.remove(), 600);
     }, 3500);
   }
