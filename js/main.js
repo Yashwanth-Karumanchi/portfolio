@@ -71,37 +71,25 @@
 
   // ── Hamburger ──────────────────────────────────────────────
   const hamburger = document.getElementById('hamburger');
-  const navList   = document.getElementById('navLinks');
+  const navList = document.getElementById('navLinks');
 
   if (hamburger && navList) {
-    function closeMenu() {
-      navList.classList.remove('open');
-      hamburger.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
-    }
-
-    function toggleMenu(e) {
+    hamburger.addEventListener('click', e => {
       e.preventDefault();
       e.stopPropagation();
 
-      const open = !navList.classList.contains('open');
-
-      navList.classList.toggle('open', open);
+      const open = navList.classList.toggle('open');
       hamburger.classList.toggle('open', open);
-      hamburger.setAttribute('aria-expanded', String(open));
-    }
-
-    hamburger.addEventListener('click', toggleMenu);
-
-    navList.addEventListener('click', e => {
-      e.stopPropagation();
+      hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
 
-    navList.querySelectorAll('.nav-link').forEach(l => {
-      l.addEventListener('click', closeMenu);
+    navList.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navList.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
     });
-
-    document.addEventListener('click', closeMenu);
   }
 
   // ── Chat toggle (navbar button AND logo triple click) ──────

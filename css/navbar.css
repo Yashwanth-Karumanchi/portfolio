@@ -1,3 +1,4 @@
+```css
 /* ============================================================
    NAVBAR.CSS
    ============================================================ */
@@ -171,43 +172,65 @@
 
 /* ── Mobile ──────────────────────────────────────────────── */
 @media (max-width: 900px) {
-  .navbar-links {
-    position: fixed;
-    top: var(--nav-height);
-    left: 0;
-    right: 0;
-    background: rgba(242, 237, 232, 0.96);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    flex-direction: column;
-    gap: 4px;
-    padding: 16px 24px 24px;
-    border-bottom: 1px solid var(--border);
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-120%);
-    opacity: 0;
-    transition: transform 0.35s var(--ease-out), opacity 0.35s var(--ease-out);
-    pointer-events: none;
+  .navbar {
+    z-index: 5000;
   }
 
-  .navbar-links.open {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
+  .navbar-hamburger {
+    display: flex;
+    position: relative;
+    z-index: 5002;
   }
 
-  .nav-link { width: 100%; padding: 10px 16px; font-size: 15px; }
-  .navbar-hamburger { display: flex; }
-  .visitor-badge { display: none; }
-  .btn-chat-trigger { display: none; }
-}
-
-@media (max-width: 768px) {
-  .navbar-links {
+  .visitor-badge,
+  .btn-chat-trigger {
     display: none;
   }
 
-  .navbar-links.open {
+  .navbar-links {
+    position: fixed;
+    top: calc(var(--nav-height) + 10px);
+    left: 16px;
+    right: 16px;
     display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 18px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    z-index: 5001;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-12px);
+    pointer-events: none;
+
+    transition:
+      opacity var(--transition-base),
+      visibility var(--transition-base),
+      transform var(--transition-base);
+  }
+
+  .navbar-links.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .navbar-links li,
+  .navbar-links .nav-link {
+    width: 100%;
+  }
+
+  .navbar-links .nav-link {
+    display: block;
+    padding: 12px 14px;
+    font-size: 15px;
+    border-radius: var(--radius-md);
   }
 }
+```

@@ -115,3 +115,24 @@
 
 .cert-card:hover::after { opacity: 1; }
 .cert-card:hover { border-color: var(--accent); box-shadow: var(--shadow-md);  }
+
+@media (max-width: 768px) {
+  .certs-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 18px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .certs-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cert-card {
+    flex: 0 0 86%;
+    scroll-snap-align: center;
+  }
+}
