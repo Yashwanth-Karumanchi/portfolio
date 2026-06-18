@@ -17,7 +17,7 @@ EXPERIENCE:
 4. Teaching Assistant, Univ of Utah (Aug-Dec 2025): 200+ student issues resolved. Grading +35%, env failures -30%.
 5. ML Engineer, Watershed Support Services (Jul-Oct 2023): Crop health detection 40% to 89% mAP. PySpark pipelines 5x faster.
 
-PROJECTS: ARIA AI CRM (live, 50+ endpoints, 13 AI actions, 3 Google APIs), NBA Conversational AI (RAG+ONNX, 230 concurrent users, latency -42%), Production MLOps Platform (KS-test/PSI/SHAP/MLflow, RCA -40%), HC18 Medical Segmentation (nnU-Net, Dice 0.74), Distributed Data Engine (20GB in ~2min, accuracy +20%), Multi-Agent QA Generation, Chess Insights (live), Emotion Movie RecSys, Image Compression GAN, Phishing Detection, Detectron sign language.
+PROJECTS: ARIA AI CRM (live at https://ai-crm-agent-ol9e.onrender.com/aria, 50+ endpoints, 13 AI actions, 3 Google APIs), NBA Conversational AI (RAG+ONNX, 230 concurrent users, latency -42%), Production MLOps Platform (KS-test/PSI/SHAP/MLflow, RCA -40%), HC18 Medical Segmentation (nnU-Net, Dice 0.74), Distributed Data Processing Engine (github.com/Yashwanth-Karumanchi/Automated-Data-Cleaning-Pipeline-for-ML, 20GB in ~2min, accuracy +20%), Multi-Agent QA Generation, Chess Insights (live at dataviscourse2024.github.io/group-project-chess-insights/), Emotion Movie RecSys, Image Compression GAN, Phishing Website Detection (github.com/Yashwanth-Karumanchi/Phishing-Website-Detection), Detectron Sign Language Translator (github.com/Yashwanth-Karumanchi/Detectron--A-user-friendly-sign-language-translator), Face AI Prototype (github.com/Yashwanth-Karumanchi/Face-AI-Prototype).
 
 PAPERS: SINA arXiv:2601.22114 (2026), Plantation Monitoring arXiv:2502.08233 (2025, 9534 annotations, 7 CNNs).
 
