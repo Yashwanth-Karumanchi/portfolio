@@ -67,7 +67,7 @@
   background: var(--accent);
   color: #fff;
   border-color: var(--accent);
-  transform: translateY(-2px);
+
 }
 
 .project-featured-badge {

@@ -27,12 +27,12 @@
 
 .chat-fab:hover {
   background: var(--accent-mid);
-  transform: translateY(-3px);
+  
   box-shadow: 0 16px 40px rgba(45,122,107,0.35), var(--shadow-lg);
 }
 
 .chat-fab:active {
-  transform: translateY(-1px);
+  
 }
 
 .chat-fab-label {

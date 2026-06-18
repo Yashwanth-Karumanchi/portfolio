@@ -39,7 +39,7 @@
 .contact-link:hover {
   border-color: var(--accent);
   box-shadow: var(--shadow-md), 0 0 0 1px var(--accent-glow);
-  transform: translateY(-3px);
+  
 }
 
 .contact-link-icon {
@@ -123,7 +123,7 @@
   background: var(--accent);
   color: #fff;
   border-color: var(--accent);
-  transform: translateY(-3px);
+  
 }
 
 @media (max-width: 560px) {

@@ -3,14 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Yashwanth Karumanchi — AI Engineer, ML Researcher, and Full Stack Builder. MS Computer Science, University of Utah.">
-  <meta name="keywords" content="Yashwanth Karumanchi, AI Engineer, Machine Learning, NLP, FastAPI, Python, LLM">
-  <meta property="og:title" content="Yashwanth Karumanchi — AI Engineer">
-  <meta property="og:description" content="Building production AI systems. Open to AI/ML/Agentic roles.">
-  <meta property="og:type" content="website">
-  <title>Yashwanth Karumanchi — AI Engineer</title>
-
-  <!-- CSS -->
+  <meta name="description" content="Yashwanth Karumanchi - ML Engineer, AI/Agentic Systems, Computer Vision, Data Engineering. MS Computer Science, University of Utah.">
+  <title>Yashwanth Karumanchi - ML Engineer</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/navbar.css">
@@ -25,39 +19,35 @@
   <link rel="stylesheet" href="css/contact.css">
   <link rel="stylesheet" href="css/chat.css">
   <link rel="stylesheet" href="css/achievements.css">
-
-  <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 </head>
 <body>
 
-<!-- ── Page Loader ────────────────────────────────────────── -->
+<!-- Page Loader -->
 <div class="page-loader" id="pageLoader">
   <div class="loader-logo">YK</div>
-  <div class="loader-bar">
-    <div class="loader-bar-fill"></div>
-  </div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
 </div>
 
-<!-- ── Custom Cursor ──────────────────────────────────────── -->
+<!-- Custom Cursor -->
 <div class="cursor-dot"  id="cursorDot"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
 <!-- ── Navbar ─────────────────────────────────────────────── -->
 <nav class="navbar" id="navbar">
   <div class="container navbar-inner">
-    <a href="#hero" class="navbar-logo" aria-label="Home">
+    <a href="#hero" class="navbar-logo" id="navLogo">
       <span class="logo-text">YK</span>
       <span class="logo-dot"></span>
     </a>
 
     <ul class="navbar-links" id="navLinks">
-      <li><a href="#about"       class="nav-link">About</a></li>
-      <li><a href="#experience"  class="nav-link">Experience</a></li>
-      <li><a href="#projects"    class="nav-link">Projects</a></li>
-      <li><a href="#research"    class="nav-link">Research</a></li>
-      <li><a href="#skills"      class="nav-link">Skills</a></li>
-      <li><a href="#contact"     class="nav-link">Contact</a></li>
+      <li><a href="#about"      class="nav-link">About</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#projects"   class="nav-link">Projects</a></li>
+      <li><a href="#research"   class="nav-link">Research</a></li>
+      <li><a href="#skills"     class="nav-link">Skills</a></li>
+      <li><a href="#contact"    class="nav-link">Contact</a></li>
     </ul>
 
     <div class="navbar-right">
@@ -66,7 +56,7 @@
         <span id="visitorCount">...</span>
       </div>
       <button class="btn btn-primary btn-chat-trigger" id="chatTrigger" aria-label="Open AI chat">
-        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
         </svg>
         Ask AI Me
@@ -78,14 +68,14 @@
   </div>
 </nav>
 
-<!-- ── Hero ───────────────────────────────────────────────── -->
+<!-- ── Hero ──────────────────────────────────────────────── -->
 <section class="hero" id="hero">
   <canvas class="hero-canvas" id="particleCanvas" aria-hidden="true"></canvas>
 
   <div class="hero-content container">
     <div class="hero-eyebrow reveal">
       <span class="hero-status-dot"></span>
-      <span>Open to AI / ML / Agentic roles</span>
+      <span>Open to AI / ML / Agentic / Data Engineering roles</span>
     </div>
 
     <h1 class="hero-name" id="heroName" aria-label="Yashwanth Karumanchi">
@@ -96,22 +86,22 @@
     <div class="hero-role">
       <span class="hero-role-prefix">I build</span>
       <span class="hero-role-words" id="roleWords" aria-live="polite">
-        <span class="hero-role-word active">Production AI Agents</span>
-        <span class="hero-role-word">ML Research Systems</span>
+        <span class="hero-role-word active">Agentic AI Systems</span>
+        <span class="hero-role-word">Computer Vision Models</span>
+        <span class="hero-role-word">Production ML Pipelines</span>
         <span class="hero-role-word">Full Stack Applications</span>
-        <span class="hero-role-word">Agentic Pipelines</span>
+        <span class="hero-role-word">LLM Powered Products</span>
       </span>
     </div>
 
     <p class="hero-bio reveal reveal-delay-3">
-      MS Computer Science @ University of Utah (GPA 3.94). Research Assistant
-      under Prof. Morteza Fayazi. 2 published papers. 9 certifications.
-      I ship things that actually work in production.
+      MS Computer Science at University of Utah (GPA 3.94). Research Assistant under Prof. Morteza Fayazi.
+      2 published papers. 9 certifications. I ship things end to end.
     </p>
 
     <div class="hero-actions reveal reveal-delay-4">
       <a href="#projects" class="btn btn-primary">
-        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
         </svg>
         View My Work
@@ -131,15 +121,13 @@
     </div>
 
     <div class="hero-scroll-hint reveal reveal-delay-5" aria-hidden="true">
-      <div class="scroll-mouse">
-        <div class="scroll-wheel"></div>
-      </div>
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
       <span>Scroll to explore</span>
     </div>
   </div>
 
-  <!-- XP bar -->
-  <div class="xp-bar-container" id="xpContainer" aria-label="Portfolio exploration progress">
+  <!-- XP Bar -->
+  <div class="xp-bar-container" id="xpContainer">
     <div class="xp-bar-label">
       <span class="xp-icon">⚡</span>
       <span>Profile <span id="xpPercent">0</span>% explored</span>
@@ -150,74 +138,63 @@
   </div>
 </section>
 
-<!-- ── About ───────────────────────────────────────────────── -->
+<!-- ── About ──────────────────────────────────────────────── -->
 <section class="section" id="about">
   <div class="container">
     <div class="about-grid">
       <div class="about-left">
-        <p class="section-label">About Me</p>
-        <h2 class="section-title">Building AI that<br>actually ships.</h2>
+        <p class="section-label reveal">About Me</p>
+        <h2 class="section-title reveal reveal-delay-1">Building AI that actually ships.</h2>
 
-        <div class="about-text reveal">
-          <p>
-            Hey — I'm Yashwanth. I just finished my MS in Computer Science at the
-            University of Utah with a 3.94 GPA. Right now I'm working as a Research
-            Assistant under Prof. Morteza Fayazi, building semantic data-wrangling
-            tools powered by embeddings, clustering, and subgroup discovery.
-          </p>
-          <p>
-            Before that I spent time at TraceAQ designing spatiotemporal ML
-            infrastructure for air quality prediction — cutting storage 83%, improving
-            retrieval 4x, and reducing PM2.5 prediction RMSE by 39%. I also TAed ML
-            and Computer Vision courses for a semester.
-          </p>
-          <p>
-            I care about building things end-to-end. Not just the model, but the
-            API, the frontend, the agent, the deployment, and the reliability layer
-            around it. I'm actively looking for AI/ML/Agentic engineering roles.
-          </p>
+        <div class="about-text reveal reveal-delay-2">
+          <p>Hey, I'm Yashwanth. I just finished my MS in Computer Science at the University of Utah with a 3.94 GPA. Right now I'm a Research Assistant under Prof. Morteza Fayazi, building semantic data-wrangling tools powered by embeddings, HDBSCAN clustering, and subgroup discovery.</p>
+          <p>Before that I spent time at TraceAQ designing spatiotemporal ML infrastructure for air quality prediction and as a Research Assistant building SINA, an AI pipeline that reads circuit schematics and generates netlists with 96.47% accuracy.</p>
+          <p>I work across the full ML stack: from model training and evaluation to deployment, reliability monitoring, and agentic systems that actually take actions. I care about things working in production, not just in notebooks.</p>
         </div>
 
-        <div class="about-tags reveal reveal-delay-2">
-          <span class="tag">Open to work</span>
+        <div class="about-tags reveal reveal-delay-3">
+          <span class="tag">Open to Work</span>
           <span class="tag">Salt Lake City, UT</span>
           <span class="tag">GPA 3.94 / 4.0</span>
-          <span class="tag">MS Computer Science</span>
+          <span class="tag">Originally from India</span>
         </div>
 
-        <div class="about-links reveal reveal-delay-3">
+        <div class="about-links reveal reveal-delay-4">
           <a href="mailto:yashwanthkarumanchi@gmail.com" class="about-link">
-            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             yashwanthkarumanchi@gmail.com
           </a>
           <a href="tel:3855251225" class="about-link">
-            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
             385-525-1225
           </a>
         </div>
       </div>
 
       <div class="about-right reveal reveal-delay-2">
-        <div class="about-card">
-          <div class="about-card-header">
-            <span class="text-mono text-accent" style="font-size:12px;">currently_doing.json</span>
+        <!-- Floating skill orbs animation instead of plain code card -->
+        <div class="about-orbit-wrapper">
+          <div class="orbit-center">
+            <div class="orbit-center-text">YK</div>
+            <div class="orbit-center-sub">ML Engineer</div>
           </div>
-          <div class="about-card-body">
-            <pre class="about-code"><code><span class="code-bracket">{</span>
-  <span class="code-key">"role"</span>: <span class="code-str">"Research Assistant"</span>,
-  <span class="code-key">"lab"</span>: <span class="code-str">"University of Utah"</span>,
-  <span class="code-key">"advisor"</span>: <span class="code-str">"Prof. Morteza Fayazi"</span>,
-  <span class="code-key">"focus"</span>: <span class="code-str">"Semantic data wrangling,
-   embeddings, AI reliability"</span>,
-  <span class="code-key">"papers"</span>: <span class="code-num">2</span>,
-  <span class="code-key">"certs"</span>: <span class="code-num">9</span>,
-  <span class="code-key">"seeking"</span>: <span class="code-str">"AI / ML / Agentic roles"</span>,
-  <span class="code-key">"status"</span>: <span class="code-bool">true</span>
-<span class="code-bracket">}</span></code></pre>
+          <div class="orbit orbit-1">
+            <div class="orbit-item">🤖 Agentic AI</div>
+          </div>
+          <div class="orbit orbit-2">
+            <div class="orbit-item">👁 Computer Vision</div>
+          </div>
+          <div class="orbit orbit-3">
+            <div class="orbit-item">🧠 LLMs &amp; RAG</div>
+          </div>
+          <div class="orbit orbit-4">
+            <div class="orbit-item">📊 MLOps</div>
+          </div>
+          <div class="orbit orbit-5">
+            <div class="orbit-item">☁ Data Engineering</div>
+          </div>
+          <div class="orbit orbit-6">
+            <div class="orbit-item">⚗ Deep Learning</div>
           </div>
         </div>
 
@@ -226,14 +203,14 @@
             <div class="edu-icon">🎓</div>
             <div>
               <div class="edu-degree">M.S. Computer Science</div>
-              <div class="edu-school">University of Utah · GPA 3.94/4.0 · Aug 2024 – May 2026</div>
+              <div class="edu-school">University of Utah &middot; GPA 3.94/4.0 &middot; Aug 2024 &ndash; May 2026</div>
             </div>
           </div>
           <div class="edu-item">
             <div class="edu-icon">🎓</div>
             <div>
-              <div class="edu-degree">B.Tech Computer Science</div>
-              <div class="edu-school">CVR College of Engineering · GPA 9.2/10</div>
+              <div class="edu-degree">B.Tech Computer Science (Minor: Cybersecurity)</div>
+              <div class="edu-school">CVR College of Engineering &middot; GPA 9.2/10</div>
             </div>
           </div>
         </div>
@@ -242,41 +219,41 @@
   </div>
 </section>
 
-<!-- ── Stats ────────────────────────────────────────────────── -->
+<!-- ── Stats ──────────────────────────────────────────────── -->
 <section class="stats-section" id="stats">
   <div class="container">
     <div class="stats-grid stagger-children">
       <div class="stat-item">
-        <div class="stat-number" data-target="50" data-suffix="+">0</div>
-        <div class="stat-label">REST Endpoints<br>Built</div>
+        <div class="stat-number" data-target="83" data-suffix="%">0</div>
+        <div class="stat-label">Storage Cost Cut<br>at TraceAQ</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="2" data-suffix=".72x">0</div>
+        <div class="stat-label">Better than SOTA<br>on SINA</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="39" data-suffix="%">0</div>
+        <div class="stat-label">RMSE Reduction<br>PM2.5 Prediction</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="4" data-suffix="x">0</div>
+        <div class="stat-label">Faster Data Retrieval<br>in Production</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="230" data-suffix="">0</div>
+        <div class="stat-label">Concurrent Users<br>on NBA AI Chat</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="42" data-suffix="%">0</div>
+        <div class="stat-label">Latency Reduced<br>via ONNX INT8</div>
       </div>
       <div class="stat-item">
         <div class="stat-number" data-target="2" data-suffix="">0</div>
         <div class="stat-label">Published<br>Research Papers</div>
       </div>
       <div class="stat-item">
-        <div class="stat-number" data-target="97" data-suffix="%">0</div>
-        <div class="stat-label">CNN Accuracy<br>(XceptionNet)</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number" data-target="2" data-suffix=".72x">0</div>
-        <div class="stat-label">Better than<br>SOTA (SINA)</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number" data-target="83" data-suffix="%">0</div>
-        <div class="stat-label">Storage Reduction<br>@ TraceAQ</div>
-      </div>
-      <div class="stat-item">
         <div class="stat-number" data-target="9" data-suffix="">0</div>
         <div class="stat-label">Industry<br>Certifications</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number" data-target="9534" data-suffix="">0</div>
-        <div class="stat-label">Drone Image<br>Annotations</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number" data-target="3" data-suffix="">0</div>
-        <div class="stat-label">Live Google<br>APIs Integrated</div>
       </div>
     </div>
   </div>
@@ -286,7 +263,7 @@
 <section class="section" id="experience">
   <div class="container">
     <p class="section-label reveal">Career</p>
-    <h2 class="section-title reveal reveal-delay-1">Where I've worked</h2>
+    <h2 class="section-title reveal reveal-delay-1">Where I have worked</h2>
 
     <div class="timeline">
 
@@ -299,25 +276,15 @@
           <div class="timeline-header">
             <div>
               <h3 class="timeline-role">Research Assistant</h3>
-              <div class="timeline-company">
-                <span>University of Utah</span>
-                <span class="timeline-sep">·</span>
-                <span class="badge">Current</span>
-              </div>
+              <div class="timeline-company"><span>University of Utah</span><span class="timeline-sep">&middot;</span><span class="badge">Current</span></div>
             </div>
-            <span class="timeline-date">May 2026 – Present</span>
+            <span class="timeline-date">May 2026 &ndash; Present</span>
           </div>
           <ul class="timeline-bullets">
-            <li>Building a semantic data-wrangling assistant using embeddings, clustering, subgroup discovery, and decision trees to detect inconsistent labels, missing values, fragmented groups, semantic drift, and data-quality failures that degrade downstream AI systems.</li>
-            <li>Built reward-style evaluation for repair recommendations by scoring semantic correctness, confidence, consistency, downstream utility, and explanation quality across candidate fixes.</li>
+            <li>Building a semantic no-code data wrangling assistant using SentenceTransformers, HDBSCAN, subgroup discovery, and decision trees to detect inconsistent labels, missing values, and semantic drift in tabular data.</li>
+            <li>Designing categorical canonicalization and repair recommendation workflows to merge equivalent values, suggest safer imputations, and generate plain-language explanations for visual data wrangling systems.</li>
           </ul>
-          <div class="timeline-tags">
-            <span class="tag">Embeddings</span>
-            <span class="tag">Clustering</span>
-            <span class="tag">Decision Trees</span>
-            <span class="tag">AI Reliability</span>
-            <span class="tag">Python</span>
-          </div>
+          <div class="timeline-tags"><span class="tag">Embeddings</span><span class="tag">HDBSCAN</span><span class="tag">Decision Trees</span><span class="tag">SentenceTransformers</span><span class="tag">Python</span></div>
         </div>
       </div>
 
@@ -329,26 +296,17 @@
         <div class="timeline-content card">
           <div class="timeline-header">
             <div>
-              <h3 class="timeline-role">Machine Learning &amp; Research Engineer</h3>
-              <div class="timeline-company">
-                <span>TraceAQ</span>
-              </div>
+              <h3 class="timeline-role">ML &amp; Research Engineer</h3>
+              <div class="timeline-company"><span>TraceAQ</span></div>
             </div>
-            <span class="timeline-date">Jan 2026 – May 2026</span>
+            <span class="timeline-date">Jan 2026 &ndash; May 2026</span>
           </div>
           <ul class="timeline-bullets">
-            <li>Designed cloud-native spatiotemporal ML infrastructure with Python, PySpark, AWS S3, GeoTIFF ingestion, Zarr, and meteorological features — reducing storage <strong>83%</strong> and improving retrieval <strong>4x</strong>.</li>
-            <li>Built semi-supervised PM2.5 prediction using AirNow labels and low-cost sensor pseudo-labels, reducing RMSE <strong>39%</strong> and improving event detection <strong>41%</strong> through leakage-safe validation and benchmark cohorts.</li>
-            <li>Built degradation-detection checks across temporal splits, event thresholds, sensor coverage, missing-input patterns, distribution shifts, and pre-training statistical gates — reducing false positives up to <strong>71%</strong>.</li>
+            <li>Designed a cloud-native Zarr datastore for large-scale spatiotemporal air-quality modeling; optimized chunking and compression to cut storage costs by <strong>83%</strong> and accelerate retrieval by <strong>4x</strong>.</li>
+            <li>Built semi-supervised PM2.5 prediction combining AirNow observations with low-cost sensor pseudo-labels, reducing RMSE by <strong>39%</strong> and improving event detection accuracy by <strong>41%</strong>.</li>
+            <li>Improved model performance <strong>66% over physics baseline</strong> and reduced false positives by <strong>71%</strong> via classifier-regressor gating and threshold-aware evaluation.</li>
           </ul>
-          <div class="timeline-tags">
-            <span class="tag">PySpark</span>
-            <span class="tag">AWS S3</span>
-            <span class="tag">Semi-supervised ML</span>
-            <span class="tag">GeoTIFF</span>
-            <span class="tag">Zarr</span>
-            <span class="tag">PM2.5 Prediction</span>
-          </div>
+          <div class="timeline-tags"><span class="tag">PySpark</span><span class="tag">AWS S3</span><span class="tag">Semi-supervised ML</span><span class="tag">GeoTIFF</span><span class="tag">Zarr</span></div>
         </div>
       </div>
 
@@ -360,23 +318,59 @@
         <div class="timeline-content card">
           <div class="timeline-header">
             <div>
-              <h3 class="timeline-role">Teaching Assistant</h3>
-              <div class="timeline-company">
-                <span>University of Utah</span>
-              </div>
+              <h3 class="timeline-role">Research Assistant (SINA Project)</h3>
+              <div class="timeline-company"><span>University of Utah</span></div>
             </div>
-            <span class="timeline-date">Aug 2025 – Dec 2025</span>
+            <span class="timeline-date">Apr 2025 &ndash; Aug 2025</span>
           </div>
           <ul class="timeline-bullets">
-            <li>Mentored students in ML, computer vision, PyTorch, TensorFlow, debugging, reproducibility, and benchmarking.</li>
-            <li>Resolved <strong>200+ technical issues</strong> and automated evaluation workflows, improving grading efficiency <strong>35%</strong>.</li>
+            <li>Built SINA, an end-to-end computer vision pipeline for schematic-to-netlist conversion using YOLOv11, connected-component logic, OCR, and vision-language models. Achieved <strong>96.47% accuracy</strong>, <strong>2.7x better than SOTA</strong>.</li>
+            <li>Reduced GPU usage by <strong>60%</strong> and training time by <strong>50%</strong> through kernel tuning and memory-efficient operations.</li>
+            <li>Built validation and post-processing pipelines reducing detection errors by 25% and improving mapping accuracy by 12%.</li>
           </ul>
-          <div class="timeline-tags">
-            <span class="tag">ML</span>
-            <span class="tag">Computer Vision</span>
-            <span class="tag">PyTorch</span>
-            <span class="tag">TensorFlow</span>
+          <div class="timeline-tags"><span class="tag">YOLOv11</span><span class="tag">GPT-4o</span><span class="tag">OCR</span><span class="tag">Computer Vision</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal reveal-delay-3">
+        <div class="timeline-marker">
+          <div class="timeline-dot"></div>
+          <div class="timeline-line"></div>
+        </div>
+        <div class="timeline-content card">
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-role">Teaching Assistant</h3>
+              <div class="timeline-company"><span>University of Utah</span></div>
+            </div>
+            <span class="timeline-date">Aug 2025 &ndash; Dec 2025</span>
           </div>
+          <ul class="timeline-bullets">
+            <li>Supported ML and computer vision coursework. Resolved <strong>200+ PyTorch, TensorFlow, and GPU issues</strong>. Automated grading workflows improving efficiency by <strong>35%</strong>.</li>
+            <li>Standardized notebook execution and package setup, reducing environment failures by <strong>30%</strong>.</li>
+          </ul>
+          <div class="timeline-tags"><span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">Computer Vision</span><span class="tag">ML</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal reveal-delay-4">
+        <div class="timeline-marker">
+          <div class="timeline-dot"></div>
+          <div class="timeline-line"></div>
+        </div>
+        <div class="timeline-content card">
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-role">Machine Learning Engineer</h3>
+              <div class="timeline-company"><span>Watershed Support Services</span></div>
+            </div>
+            <span class="timeline-date">Jul 2023 &ndash; Oct 2023</span>
+          </div>
+          <ul class="timeline-bullets">
+            <li>Reengineered a drone-based crop-health detection pipeline, improving performance from <strong>40% to 89% mAP</strong> across 7 crop-health classes on a 5,000-image agricultural dataset.</li>
+            <li>Built scalable PySpark preprocessing pipelines <strong>5x faster</strong> than local workflows. Delivered field-level analytics dashboards for stakeholders.</li>
+          </ul>
+          <div class="timeline-tags"><span class="tag">Computer Vision</span><span class="tag">PySpark</span><span class="tag">Object Detection</span><span class="tag">Agriculture</span></div>
         </div>
       </div>
 
@@ -388,216 +382,145 @@
 <section class="section" id="projects">
   <div class="container">
     <p class="section-label reveal">Work</p>
-    <h2 class="section-title reveal reveal-delay-1">Things I've built</h2>
+    <h2 class="section-title reveal reveal-delay-1">Things I have built</h2>
     <p class="section-subtitle reveal reveal-delay-2">Production systems, research tools, and everything in between.</p>
 
     <div class="projects-grid stagger-children">
 
-      <!-- ARIA -->
       <div class="project-card card card-tilt featured">
         <div class="project-card-inner">
           <div class="project-header">
             <div class="project-icon">🤖</div>
             <div class="project-links">
               <a href="https://ai-crm-agent-ol9e.onrender.com/aria" target="_blank" rel="noopener" class="project-link" aria-label="Live demo">
-                <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                </svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
               </a>
               <a href="https://github.com/Yashwanth-Karumanchi/AI-CRM-Agent" target="_blank" rel="noopener" class="project-link" aria-label="GitHub">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-                </svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
               </a>
             </div>
           </div>
-          <div class="project-featured-badge">Featured</div>
-          <h3 class="project-title">ARIA — AI CRM Agent</h3>
-          <p class="project-desc">Production-deployed AI CRM with a conversational agent that executes 13 CRM actions from plain English. Real Gmail, Calendar, and Sheets integrations. 50+ REST endpoints.</p>
-          <div class="project-stats">
-            <span>50+ endpoints</span>
-            <span>13 AI actions</span>
-            <span>3 Google APIs</span>
-          </div>
-          <div class="project-tags">
-            <span class="tag">FastAPI</span>
-            <span class="tag">Gemini 2.5</span>
-            <span class="tag">Google APIs</span>
-            <span class="tag">Python</span>
-            <span class="tag">Vanilla JS</span>
-          </div>
+          <div class="project-featured-badge">Featured &middot; Live</div>
+          <h3 class="project-title">ARIA - AI CRM Agent</h3>
+          <p class="project-desc">Production-deployed AI CRM. Natural language executes 13 real actions: Gmail, Calendar, Sheets, lead scoring, bulk import. 50+ REST endpoints, 10-page frontend.</p>
+          <div class="project-stats"><span>50+ endpoints</span><span>13 AI actions</span><span>3 Google APIs</span></div>
+          <div class="project-tags"><span class="tag">FastAPI</span><span class="tag">Gemini 2.5</span><span class="tag">Google APIs</span><span class="tag">Vanilla JS</span></div>
         </div>
       </div>
 
-      <!-- Chess Insights -->
       <div class="project-card card card-tilt">
         <div class="project-card-inner">
           <div class="project-header">
-            <div class="project-icon">♟️</div>
-            <div class="project-links">
-              <a href="https://dataviscourse2024.github.io/group-project-chess-insights/" target="_blank" rel="noopener" class="project-link" aria-label="Live demo">
-                <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                </svg>
-              </a>
-              <a href="https://github.com/dataviscourse2024/group-project-chess-insights" target="_blank" rel="noopener" class="project-link" aria-label="GitHub">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-                </svg>
-              </a>
-            </div>
+            <div class="project-icon">🏀</div>
+            <div class="project-links"></div>
           </div>
-          <h3 class="project-title">Chess Insights</h3>
-          <p class="project-desc">Interactive data visualization exploring chess game patterns, opening strategies, and player performance analytics with D3.js.</p>
-          <div class="project-tags">
-            <span class="tag">D3.js</span>
-            <span class="tag">Data Viz</span>
-            <span class="tag">JavaScript</span>
-          </div>
+          <h3 class="project-title">NBA Conversational AI</h3>
+          <p class="project-desc">Full-stack conversational AI with RAG-based retrieval and ONNX INT8 quantization. Improved retrieval accuracy 14.7%, cut latency 42%, supports 230 concurrent users.</p>
+          <div class="project-stats"><span>230 concurrent users</span><span>42% lower latency</span></div>
+          <div class="project-tags"><span class="tag">FastAPI</span><span class="tag">Angular</span><span class="tag">RAG</span><span class="tag">ONNX INT8</span></div>
         </div>
       </div>
 
-      <!-- LLM RAG -->
-      <div class="project-card card card-tilt">
-        <div class="project-card-inner">
-          <div class="project-header">
-            <div class="project-icon">🧠</div>
-            <div class="project-links">
-              <a href="https://github.com/Yashwanth-Karumanchi" target="_blank" rel="noopener" class="project-link" aria-label="GitHub">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-          <h3 class="project-title">LLM Orchestration &amp; RAG System</h3>
-          <p class="project-desc">Conversational AI with retrieval, embeddings, RAG serving, and ONNX INT8 optimization — improving retrieval 14.7%, lowering latency 42%, supporting 230 concurrent users.</p>
-          <div class="project-stats">
-            <span>230 concurrent users</span>
-            <span>42% lower latency</span>
-          </div>
-          <div class="project-tags">
-            <span class="tag">RAG</span>
-            <span class="tag">ONNX</span>
-            <span class="tag">Embeddings</span>
-            <span class="tag">Python</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ML Reliability -->
       <div class="project-card card card-tilt">
         <div class="project-card-inner">
           <div class="project-header">
             <div class="project-icon">📊</div>
             <div class="project-links">
-              <a href="https://github.com/Yashwanth-Karumanchi/ML-Ops-Model-Reliability-Analysis-at-Production-Level" target="_blank" rel="noopener" class="project-link" aria-label="GitHub">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-                </svg>
+              <a href="https://github.com/Yashwanth-Karumanchi/ML-Ops-Model-Reliability-Analysis-at-Production-Level" target="_blank" rel="noopener" class="project-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
               </a>
             </div>
           </div>
-          <h3 class="project-title">Production ML Reliability Platform</h3>
-          <p class="project-desc">Monitoring workflows with KS-test, PSI, benchmark slices, and regression tests to catch data drift, label noise, and model degradation. Reduced root-cause analysis time 40%.</p>
-          <div class="project-tags">
-            <span class="tag">MLOps</span>
-            <span class="tag">KS-test</span>
-            <span class="tag">PSI</span>
-            <span class="tag">Python</span>
-          </div>
+          <h3 class="project-title">Production MLOps Platform</h3>
+          <p class="project-desc">Unified ML monitoring across classification, regression, NLP, and CV workloads. KS-test, PSI, SHAP, LIME, MLflow versioning. Root-cause analysis time cut by 40%.</p>
+          <div class="project-tags"><span class="tag">MLflow</span><span class="tag">SHAP</span><span class="tag">PSI</span><span class="tag">Docker</span></div>
         </div>
       </div>
 
-      <!-- Emotion Movie Rec -->
+      <div class="project-card card card-tilt">
+        <div class="project-card-inner">
+          <div class="project-header">
+            <div class="project-icon">🧬</div>
+            <div class="project-links"></div>
+          </div>
+          <h3 class="project-title">HC18 Medical Image Segmentation</h3>
+          <p class="project-desc">nnU-Net MRI segmentation with optimized preprocessing, augmentation, and validation. Achieved Dice score of 0.74 for clinical image analysis workflows.</p>
+          <div class="project-tags"><span class="tag">nnU-Net</span><span class="tag">MRI</span><span class="tag">Segmentation</span><span class="tag">PyTorch</span></div>
+        </div>
+      </div>
+
+      <div class="project-card card card-tilt">
+        <div class="project-card-inner">
+          <div class="project-header">
+            <div class="project-icon">⚡</div>
+            <div class="project-links"></div>
+          </div>
+          <h3 class="project-title">Distributed Data Processing Engine</h3>
+          <p class="project-desc">PySpark preprocessing system handling imbalance, leakage, skewness, missing values, and outliers. Processes 20GB in ~2 minutes. Improved downstream model accuracy by 20%.</p>
+          <div class="project-tags"><span class="tag">PySpark</span><span class="tag">Feature Engineering</span><span class="tag">Spark</span></div>
+        </div>
+      </div>
+
+      <div class="project-card card card-tilt">
+        <div class="project-card-inner">
+          <div class="project-header">
+            <div class="project-icon">🧩</div>
+            <div class="project-links"></div>
+          </div>
+          <h3 class="project-title">Multi-Agent QA Generation</h3>
+          <p class="project-desc">Multi-agent LLM workflow for automated question-answer generation using tool-based planning, iterative refinement, and quality validation loops across specialized agents.</p>
+          <div class="project-tags"><span class="tag">LLMs</span><span class="tag">Multi-Agent</span><span class="tag">Tool Use</span></div>
+        </div>
+      </div>
+
+      <div class="project-card card card-tilt">
+        <div class="project-card-inner">
+          <div class="project-header">
+            <div class="project-icon">♟</div>
+            <div class="project-links">
+              <a href="https://dataviscourse2024.github.io/group-project-chess-insights/" target="_blank" rel="noopener" class="project-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+              <a href="https://github.com/dataviscourse2024/group-project-chess-insights" target="_blank" rel="noopener" class="project-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Chess Insights</h3>
+          <p class="project-desc">Interactive D3.js data visualization exploring chess game patterns, opening strategies, and player analytics. Live and deployed.</p>
+          <div class="project-tags"><span class="tag">D3.js</span><span class="tag">Data Viz</span><span class="tag">JavaScript</span></div>
+        </div>
+      </div>
+
       <div class="project-card card card-tilt">
         <div class="project-card-inner">
           <div class="project-header">
             <div class="project-icon">🎬</div>
             <div class="project-links">
-              <a href="https://github.com/Yashwanth-Karumanchi/Emotion-Enhanced-Movie-Reccomendation-System" target="_blank" rel="noopener" class="project-link" aria-label="GitHub">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-                </svg>
+              <a href="https://github.com/Yashwanth-Karumanchi/Emotion-Enhanced-Movie-Reccomendation-System" target="_blank" rel="noopener" class="project-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
               </a>
             </div>
           </div>
           <h3 class="project-title">Emotion-Enhanced Movie Recommendation</h3>
-          <p class="project-desc">Recommendation system that blends collaborative filtering with real-time emotion detection to personalize movie suggestions based on viewer mood.</p>
-          <div class="project-tags">
-            <span class="tag">Emotion Detection</span>
-            <span class="tag">Recommender Systems</span>
-            <span class="tag">CV</span>
-          </div>
+          <p class="project-desc">Recommendation system blending collaborative filtering with real-time emotion detection via computer vision to personalize suggestions based on viewer mood.</p>
+          <div class="project-tags"><span class="tag">Emotion Detection</span><span class="tag">RecSys</span><span class="tag">CV</span></div>
         </div>
       </div>
 
-      <!-- Detectron Sign Language -->
       <div class="project-card card card-tilt">
         <div class="project-card-inner">
           <div class="project-header">
-            <div class="project-icon">🤟</div>
+            <div class="project-icon">🖼</div>
             <div class="project-links">
-              <a href="https://github.com/Yashwanth-Karumanchi/Detectron--A-user-friendly-sign-language-translator" target="_blank" rel="noopener" class="project-link" aria-label="GitHub">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-          <h3 class="project-title">Detectron — Sign Language Translator</h3>
-          <p class="project-desc">Real-time sign language recognition and translation system using computer vision and deep learning for accessible communication.</p>
-          <div class="project-tags">
-            <span class="tag">Computer Vision</span>
-            <span class="tag">Deep Learning</span>
-            <span class="tag">Accessibility</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Phishing Detection -->
-      <div class="project-card card card-tilt">
-        <div class="project-card-inner">
-          <div class="project-header">
-            <div class="project-icon">🛡️</div>
-            <div class="project-links">
-              <a href="https://github.com/Yashwanth-Karumanchi/Phishing-Website-Detection" target="_blank" rel="noopener" class="project-link" aria-label="GitHub">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-          <h3 class="project-title">Phishing Website Detection</h3>
-          <p class="project-desc">ML-powered phishing website classifier using URL features, WHOIS data, and page content analysis for real-time threat detection.</p>
-          <div class="project-tags">
-            <span class="tag">ML</span>
-            <span class="tag">Security</span>
-            <span class="tag">NLP</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- GAN Image Compression -->
-      <div class="project-card card card-tilt">
-        <div class="project-card-inner">
-          <div class="project-header">
-            <div class="project-icon">🖼️</div>
-            <div class="project-links">
-              <a href="https://github.com/Yashwanth-Karumanchi/Image-Compression-Using-GAN" target="_blank" rel="noopener" class="project-link" aria-label="GitHub">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-                </svg>
+              <a href="https://github.com/Yashwanth-Karumanchi/Image-Compression-Using-GAN" target="_blank" rel="noopener" class="project-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
               </a>
             </div>
           </div>
           <h3 class="project-title">Image Compression Using GAN</h3>
-          <p class="project-desc">GAN-based image compression achieving high quality reconstructions at significantly lower bitrates compared to standard JPEG compression.</p>
-          <div class="project-tags">
-            <span class="tag">GANs</span>
-            <span class="tag">Image Processing</span>
-            <span class="tag">PyTorch</span>
-          </div>
+          <p class="project-desc">GAN-based image compression achieving high-quality reconstructions at significantly lower bitrates than standard JPEG compression.</p>
+          <div class="project-tags"><span class="tag">GANs</span><span class="tag">PyTorch</span><span class="tag">Image Processing</span></div>
         </div>
       </div>
 
@@ -606,47 +529,25 @@
 </section>
 
 <!-- ── Research ────────────────────────────────────────────── -->
-<section class="section" id="research">
+<section class="section section-alt" id="research">
   <div class="container">
     <p class="section-label reveal">Publications</p>
     <h2 class="section-title reveal reveal-delay-1">Research Papers</h2>
-    <p class="section-subtitle reveal reveal-delay-2">Published research in computer vision, deep learning, and AI-assisted circuit design.</p>
-
     <div class="research-grid stagger-children">
 
       <div class="research-card card">
         <div class="research-card-inner">
           <div class="research-badge">arXiv 2026</div>
           <h3 class="research-title">SINA: Circuit Schematic Image-to-Netlist Generator Using AI</h3>
-          <p class="research-venue">University of Utah · arXiv:2601.22114</p>
-          <p class="research-desc">Fully automated pipeline converting circuit schematic images into SPICE-compatible netlists. Combines YOLOv11 for component detection, Connected-Component Labeling for connectivity inference, OCR, and GPT-4o for reference designator assignment.</p>
+          <p class="research-venue">University of Utah &middot; arXiv:2601.22114</p>
+          <p class="research-desc">Fully automated pipeline converting circuit schematic images into SPICE-compatible netlists using YOLOv11, Connected-Component Labeling, OCR, and GPT-4o for reference designator assignment.</p>
           <div class="research-stats">
-            <div class="research-stat">
-              <span class="research-stat-num">96.47%</span>
-              <span class="research-stat-label">Overall Accuracy</span>
-            </div>
-            <div class="research-stat">
-              <span class="research-stat-num">2.72x</span>
-              <span class="research-stat-label">Better than SOTA</span>
-            </div>
-            <div class="research-stat">
-              <span class="research-stat-num">99.6%</span>
-              <span class="research-stat-label">Component Detection</span>
-            </div>
+            <div class="research-stat"><span class="research-stat-num">96.47%</span><span class="research-stat-label">Overall Accuracy</span></div>
+            <div class="research-stat"><span class="research-stat-num">2.72x</span><span class="research-stat-label">Better than SOTA</span></div>
+            <div class="research-stat"><span class="research-stat-num">99.6%</span><span class="research-stat-label">Component Detection</span></div>
           </div>
-          <div class="research-tags">
-            <span class="tag">YOLOv11</span>
-            <span class="tag">GPT-4o</span>
-            <span class="tag">OCR</span>
-            <span class="tag">Computer Vision</span>
-            <span class="tag">EDA</span>
-          </div>
-          <a href="https://arxiv.org/abs/2601.22114" target="_blank" rel="noopener" class="btn btn-ghost research-btn">
-            Read Paper
-            <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-            </svg>
-          </a>
+          <div class="research-tags"><span class="tag">YOLOv11</span><span class="tag">GPT-4o</span><span class="tag">OCR</span><span class="tag">EDA</span></div>
+          <a href="https://arxiv.org/abs/2601.22114" target="_blank" rel="noopener" class="btn btn-ghost research-btn">Read Paper <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
         </div>
       </div>
 
@@ -654,35 +555,15 @@
         <div class="research-card-inner">
           <div class="research-badge">arXiv 2025</div>
           <h3 class="research-title">Plantation Monitoring Using Drone Images: A Dataset and Performance Review</h3>
-          <p class="research-venue">University of Utah · arXiv:2502.08233</p>
-          <p class="research-desc">Automated plantation health monitoring system using RGB drone images. Proposed a new annotated dataset with 9,534 individual tree annotations across 255 drone images. Benchmarked 7 CNN models — XceptionNet achieved 97.1% accuracy using depth-wise convolution.</p>
+          <p class="research-venue">University of Utah &middot; arXiv:2502.08233</p>
+          <p class="research-desc">Automated plantation health monitoring using RGB drone images. Proposed a new annotated dataset with 9,534 individual tree annotations across 255 drone images. Benchmarked 7 CNN architectures.</p>
           <div class="research-stats">
-            <div class="research-stat">
-              <span class="research-stat-num">97.1%</span>
-              <span class="research-stat-label">XceptionNet Accuracy</span>
-            </div>
-            <div class="research-stat">
-              <span class="research-stat-num">9,534</span>
-              <span class="research-stat-label">Annotations</span>
-            </div>
-            <div class="research-stat">
-              <span class="research-stat-num">7</span>
-              <span class="research-stat-label">CNNs Benchmarked</span>
-            </div>
+            <div class="research-stat"><span class="research-stat-num">9,534</span><span class="research-stat-label">Annotated Trees</span></div>
+            <div class="research-stat"><span class="research-stat-num">7</span><span class="research-stat-label">CNNs Benchmarked</span></div>
+            <div class="research-stat"><span class="research-stat-num">Open</span><span class="research-stat-label">Source Dataset</span></div>
           </div>
-          <div class="research-tags">
-            <span class="tag">CNN</span>
-            <span class="tag">YOLOv8</span>
-            <span class="tag">UAV</span>
-            <span class="tag">Dataset</span>
-            <span class="tag">Agriculture</span>
-          </div>
-          <a href="https://arxiv.org/abs/2502.08233" target="_blank" rel="noopener" class="btn btn-ghost research-btn">
-            Read Paper
-            <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-            </svg>
-          </a>
+          <div class="research-tags"><span class="tag">CNN</span><span class="tag">YOLOv8</span><span class="tag">UAV</span><span class="tag">Agriculture</span></div>
+          <a href="https://arxiv.org/abs/2502.08233" target="_blank" rel="noopener" class="btn btn-ghost research-btn">Read Paper <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
         </div>
       </div>
 
@@ -698,88 +579,83 @@
 
     <div class="skills-grid stagger-children">
       <div class="skills-group">
-        <div class="skills-group-label">
-          <span class="skills-group-icon">🤖</span> AI Agents &amp; LLMs
-        </div>
+        <div class="skills-group-label"><span class="skills-group-icon">🤖</span> Agentic AI &amp; LLMs</div>
         <div class="skills-tags">
-          <span class="skill-tag" data-level="95">Gemini 2.5</span>
-          <span class="skill-tag" data-level="92">Claude / Anthropic API</span>
-          <span class="skill-tag" data-level="90">RAG</span>
-          <span class="skill-tag" data-level="88">Tool Use</span>
-          <span class="skill-tag" data-level="85">Agent Orchestration</span>
-          <span class="skill-tag" data-level="88">Prompt Engineering</span>
-          <span class="skill-tag" data-level="82">MCP</span>
-          <span class="skill-tag" data-level="80">Multi-Agent Workflows</span>
+          <span class="skill-tag">LLM Orchestration</span><span class="skill-tag">Agentic Workflows</span>
+          <span class="skill-tag">RAG Pipelines</span><span class="skill-tag">Tool Use</span>
+          <span class="skill-tag">LangChain</span><span class="skill-tag">LlamaIndex</span>
+          <span class="skill-tag">Prompt Engineering</span><span class="skill-tag">MCP</span>
+          <span class="skill-tag">Multi-Agent Systems</span><span class="skill-tag">Hugging Face</span>
+          <span class="skill-tag">Gemini</span><span class="skill-tag">Anthropic / Claude</span>
         </div>
       </div>
-
       <div class="skills-group">
-        <div class="skills-group-label">
-          <span class="skills-group-icon">⚙️</span> Backend &amp; APIs
-        </div>
+        <div class="skills-group-label"><span class="skills-group-icon">🔬</span> ML &amp; Deep Learning</div>
         <div class="skills-tags">
-          <span class="skill-tag" data-level="95">Python 3.11</span>
-          <span class="skill-tag" data-level="92">FastAPI</span>
-          <span class="skill-tag" data-level="88">REST APIs</span>
-          <span class="skill-tag" data-level="85">Async / Pydantic</span>
-          <span class="skill-tag" data-level="82">SSE Streaming</span>
-          <span class="skill-tag" data-level="80">Google APIs</span>
-          <span class="skill-tag" data-level="78">Rate Limiting</span>
+          <span class="skill-tag">PyTorch</span><span class="skill-tag">TensorFlow</span>
+          <span class="skill-tag">Scikit-learn</span><span class="skill-tag">XGBoost</span>
+          <span class="skill-tag">LightGBM</span><span class="skill-tag">Keras</span>
+          <span class="skill-tag">Transformers</span><span class="skill-tag">LoRA / QLoRA</span>
+          <span class="skill-tag">ONNX</span><span class="skill-tag">Feature Engineering</span>
+          <span class="skill-tag">Model Evaluation</span><span class="skill-tag">Hyperparameter Tuning</span>
         </div>
       </div>
-
       <div class="skills-group">
-        <div class="skills-group-label">
-          <span class="skills-group-icon">🎨</span> Frontend &amp; Product
-        </div>
+        <div class="skills-group-label"><span class="skills-group-icon">🧠</span> Reinforcement Learning</div>
         <div class="skills-tags">
-          <span class="skill-tag" data-level="88">Vanilla JS</span>
-          <span class="skill-tag" data-level="82">React</span>
-          <span class="skill-tag" data-level="85">HTML / CSS</span>
-          <span class="skill-tag" data-level="80">TypeScript</span>
-          <span class="skill-tag" data-level="78">Event Delegation</span>
+          <span class="skill-tag">Policy Optimization</span><span class="skill-tag">Reward Modeling</span>
+          <span class="skill-tag">RLHF</span><span class="skill-tag">Q-Learning</span>
+          <span class="skill-tag">Agent Environments</span><span class="skill-tag">Multi-Agent RL</span>
         </div>
       </div>
-
       <div class="skills-group">
-        <div class="skills-group-label">
-          <span class="skills-group-icon">🔬</span> ML &amp; Computer Vision
-        </div>
+        <div class="skills-group-label"><span class="skills-group-icon">👁</span> Computer Vision</div>
         <div class="skills-tags">
-          <span class="skill-tag" data-level="90">PyTorch</span>
-          <span class="skill-tag" data-level="88">TensorFlow</span>
-          <span class="skill-tag" data-level="85">CNNs / ResNet / YOLO</span>
-          <span class="skill-tag" data-level="82">ONNX Optimization</span>
-          <span class="skill-tag" data-level="80">GANs</span>
-          <span class="skill-tag" data-level="85">Embeddings</span>
-          <span class="skill-tag" data-level="78">Clustering</span>
+          <span class="skill-tag">CNNs</span><span class="skill-tag">YOLO</span>
+          <span class="skill-tag">DETR</span><span class="skill-tag">Vision Transformers</span>
+          <span class="skill-tag">Image Segmentation</span><span class="skill-tag">Object Detection</span>
+          <span class="skill-tag">OCR</span><span class="skill-tag">VLMs</span>
+          <span class="skill-tag">GANs</span><span class="skill-tag">Transfer Learning</span>
         </div>
       </div>
-
       <div class="skills-group">
-        <div class="skills-group-label">
-          <span class="skills-group-icon">☁️</span> Cloud &amp; Data
-        </div>
+        <div class="skills-group-label"><span class="skills-group-icon">📏</span> MLOps &amp; Reliability</div>
         <div class="skills-tags">
-          <span class="skill-tag" data-level="85">AWS</span>
-          <span class="skill-tag" data-level="82">PySpark</span>
-          <span class="skill-tag" data-level="80">SQL / PostgreSQL</span>
-          <span class="skill-tag" data-level="78">Docker</span>
-          <span class="skill-tag" data-level="75">CI/CD</span>
-          <span class="skill-tag" data-level="80">GeoTIFF / Zarr</span>
+          <span class="skill-tag">MLflow</span><span class="skill-tag">Docker</span>
+          <span class="skill-tag">Kubernetes</span><span class="skill-tag">CI/CD</span>
+          <span class="skill-tag">Drift Detection</span><span class="skill-tag">KS-test / PSI</span>
+          <span class="skill-tag">SHAP</span><span class="skill-tag">LIME</span>
+          <span class="skill-tag">A/B Testing</span><span class="skill-tag">Model Monitoring</span>
         </div>
       </div>
-
       <div class="skills-group">
-        <div class="skills-group-label">
-          <span class="skills-group-icon">📏</span> ML Reliability
-        </div>
+        <div class="skills-group-label"><span class="skills-group-icon">☁</span> Data Engineering &amp; Cloud</div>
         <div class="skills-tags">
-          <span class="skill-tag" data-level="85">KS-test / PSI</span>
-          <span class="skill-tag" data-level="82">Data Drift Detection</span>
-          <span class="skill-tag" data-level="80">Regression Testing</span>
-          <span class="skill-tag" data-level="78">Benchmark Slices</span>
-          <span class="skill-tag" data-level="75">Label Noise</span>
+          <span class="skill-tag">PySpark</span><span class="skill-tag">Apache Spark</span>
+          <span class="skill-tag">Kafka</span><span class="skill-tag">Airflow</span>
+          <span class="skill-tag">AWS (S3, EC2, SageMaker)</span><span class="skill-tag">GCP / BigQuery</span>
+          <span class="skill-tag">Databricks</span><span class="skill-tag">Delta Lake</span>
+          <span class="skill-tag">Zarr / Parquet</span><span class="skill-tag">ETL / ELT</span>
+        </div>
+      </div>
+      <div class="skills-group">
+        <div class="skills-group-label"><span class="skills-group-icon">⚙</span> Backend &amp; APIs</div>
+        <div class="skills-tags">
+          <span class="skill-tag">Python</span><span class="skill-tag">FastAPI</span>
+          <span class="skill-tag">REST APIs</span><span class="skill-tag">Async / Pydantic</span>
+          <span class="skill-tag">SSE Streaming</span><span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">MongoDB</span><span class="skill-tag">Redis</span>
+          <span class="skill-tag">Snowflake</span><span class="skill-tag">SQL</span>
+        </div>
+      </div>
+      <div class="skills-group">
+        <div class="skills-group-label"><span class="skills-group-icon">🎨</span> Frontend &amp; Tools</div>
+        <div class="skills-tags">
+          <span class="skill-tag">Vanilla JS</span><span class="skill-tag">React</span>
+          <span class="skill-tag">Angular</span><span class="skill-tag">HTML / CSS</span>
+          <span class="skill-tag">Streamlit</span><span class="skill-tag">Tableau</span>
+          <span class="skill-tag">Power BI</span><span class="skill-tag">GitHub Actions</span>
+          <span class="skill-tag">Linux / Bash</span>
         </div>
       </div>
     </div>
@@ -791,201 +667,157 @@
   <div class="container">
     <p class="section-label reveal">Credentials</p>
     <h2 class="section-title reveal reveal-delay-1">Certifications</h2>
+    <p class="section-subtitle reveal reveal-delay-2">Click any certificate to verify.</p>
 
     <div class="certs-grid stagger-children">
-      <div class="cert-card card">
+      <a href="https://aws.amazon.com/verification" target="_blank" rel="noopener" class="cert-card card">
         <div class="cert-logo cert-aws">AWS</div>
         <div class="cert-body">
-          <h4 class="cert-name">AWS Certified ML Engineer – Associate</h4>
-          <p class="cert-meta">Nov 2025 · Expires Nov 2028</p>
+          <h4 class="cert-name">AWS Certified ML Engineer - Associate</h4>
+          <p class="cert-meta">Nov 2025 &middot; Expires Nov 2028 &middot; bd8094f3...</p>
         </div>
-      </div>
-      <div class="cert-card card">
+      </a>
+      <a href="https://aws.amazon.com/verification" target="_blank" rel="noopener" class="cert-card card">
         <div class="cert-logo cert-aws">AWS</div>
         <div class="cert-body">
-          <h4 class="cert-name">AWS Certified Data Engineer – Associate</h4>
-          <p class="cert-meta">Nov 2025 · Expires Nov 2028</p>
+          <h4 class="cert-name">AWS Certified Data Engineer - Associate</h4>
+          <p class="cert-meta">Nov 2025 &middot; Expires Nov 2028 &middot; bb9518d8...</p>
         </div>
-      </div>
-      <div class="cert-card card">
+      </a>
+      <a href="https://credentials.databricks.com/179643905" target="_blank" rel="noopener" class="cert-card card">
         <div class="cert-logo cert-databricks">DB</div>
         <div class="cert-body">
           <h4 class="cert-name">Databricks ML Professional</h4>
-          <p class="cert-meta">Apr 2026 · Expires Apr 2028</p>
+          <p class="cert-meta">Apr 2026 &middot; Expires Apr 2028 &middot; #179643905</p>
         </div>
-      </div>
-      <div class="cert-card card">
+      </a>
+      <a href="https://credentials.databricks.com/179068728" target="_blank" rel="noopener" class="cert-card card">
         <div class="cert-logo cert-databricks">DB</div>
         <div class="cert-body">
           <h4 class="cert-name">Databricks ML Associate</h4>
-          <p class="cert-meta">Apr 2026 · Expires Apr 2028</p>
+          <p class="cert-meta">Apr 2026 &middot; Expires Apr 2028 &middot; #179068728</p>
         </div>
-      </div>
-      <div class="cert-card card">
+      </a>
+      <a href="https://verify.skilljar.com/c/sye7v9pyb8f5" target="_blank" rel="noopener" class="cert-card card">
         <div class="cert-logo cert-anthropic">A</div>
         <div class="cert-body">
           <h4 class="cert-name">Claude with Anthropic API</h4>
-          <p class="cert-meta">Apr 2026 · Anthropic</p>
+          <p class="cert-meta">Apr 2026 &middot; Anthropic</p>
         </div>
-      </div>
-      <div class="cert-card card">
+      </a>
+      <a href="https://verify.skilljar.com/c/iv5v2g7stfjs" target="_blank" rel="noopener" class="cert-card card">
         <div class="cert-logo cert-anthropic">A</div>
         <div class="cert-body">
           <h4 class="cert-name">Claude Code in Action</h4>
-          <p class="cert-meta">Apr 2026 · Anthropic</p>
+          <p class="cert-meta">Apr 2026 &middot; Anthropic</p>
         </div>
-      </div>
-      <div class="cert-card card">
+      </a>
+      <a href="https://verify.skilljar.com/c/i5yztayhexe5" target="_blank" rel="noopener" class="cert-card card">
         <div class="cert-logo cert-anthropic">A</div>
         <div class="cert-body">
           <h4 class="cert-name">Introduction to MCP</h4>
-          <p class="cert-meta">Apr 2026 · Anthropic</p>
+          <p class="cert-meta">Apr 2026 &middot; Anthropic</p>
         </div>
-      </div>
-      <div class="cert-card card">
+      </a>
+      <a href="https://verify.skilljar.com/c/" target="_blank" rel="noopener" class="cert-card card">
         <div class="cert-logo cert-anthropic">A</div>
         <div class="cert-body">
           <h4 class="cert-name">Introduction to Agent Skills</h4>
-          <p class="cert-meta">Apr 2026 · Anthropic</p>
+          <p class="cert-meta">Apr 2026 &middot; Anthropic</p>
         </div>
-      </div>
-      <div class="cert-card card">
+      </a>
+      <a href="https://app.hubspot.com/academy/achievements/b9291457c0df41eaab7488a858b99e05" target="_blank" rel="noopener" class="cert-card card">
         <div class="cert-logo cert-hubspot">HS</div>
         <div class="cert-body">
           <h4 class="cert-name">HubSpot CMS for Developers II</h4>
-          <p class="cert-meta">Jun 2026 · HubSpot Academy</p>
+          <p class="cert-meta">Jun 2026 &middot; HubSpot Academy</p>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ── Contact ────────────────────────────────────────────── -->
+<!-- ── Contact ─────────────────────────────────────────────── -->
 <section class="section" id="contact">
   <div class="container">
     <div class="contact-wrapper reveal">
       <p class="section-label">Get in Touch</p>
       <h2 class="section-title">Let's work together.</h2>
-      <p class="contact-desc">
-        I'm actively looking for AI/ML/Agentic engineering roles.
-        If you're building something interesting, I'd love to hear about it.
-      </p>
+      <p class="contact-desc">I'm actively looking for AI / ML / Agentic / Data Engineering roles. If you're building something interesting, I'd love to hear about it.</p>
       <div class="contact-links">
         <a href="mailto:yashwanthkarumanchi@gmail.com" class="contact-link">
-          <div class="contact-link-icon">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-            </svg>
-          </div>
-          <div>
-            <div class="contact-link-label">Email</div>
-            <div class="contact-link-value">yashwanthkarumanchi@gmail.com</div>
-          </div>
+          <div class="contact-link-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+          <div><div class="contact-link-label">Email</div><div class="contact-link-value">yashwanthkarumanchi@gmail.com</div></div>
         </a>
         <a href="https://linkedin.com/in/yashkarumanchi" target="_blank" rel="noopener" class="contact-link">
-          <div class="contact-link-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-            </svg>
-          </div>
-          <div>
-            <div class="contact-link-label">LinkedIn</div>
-            <div class="contact-link-value">linkedin.com/in/yashkarumanchi</div>
-          </div>
+          <div class="contact-link-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
+          <div><div class="contact-link-label">LinkedIn</div><div class="contact-link-value">linkedin.com/in/yashkarumanchi</div></div>
         </a>
         <a href="https://github.com/Yashwanth-Karumanchi" target="_blank" rel="noopener" class="contact-link">
-          <div class="contact-link-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-            </svg>
-          </div>
-          <div>
-            <div class="contact-link-label">GitHub</div>
-            <div class="contact-link-value">Yashwanth-Karumanchi</div>
-          </div>
+          <div class="contact-link-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></div>
+          <div><div class="contact-link-label">GitHub</div><div class="contact-link-value">Yashwanth-Karumanchi</div></div>
         </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── Footer ─────────────────────────────────────────────── -->
+<!-- Footer -->
 <footer class="footer">
   <div class="container footer-inner">
     <span class="footer-name">Yashwanth Karumanchi</span>
     <span class="footer-copy">Built with care. Open to opportunities.</span>
     <a href="#hero" class="footer-top" aria-label="Back to top">
-      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
-      </svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
     </a>
   </div>
 </footer>
 
-<!-- ── AI Chat Widget ─────────────────────────────────────── -->
-<div class="chat-widget" id="chatWidget" aria-label="Chat with AI Yashwanth" role="dialog" aria-hidden="true">
+<!-- AI Chat Widget -->
+<div class="chat-widget" id="chatWidget" aria-hidden="true" role="dialog">
   <div class="chat-widget-header">
     <div class="chat-widget-info">
       <div class="chat-widget-avatar">YK</div>
       <div>
         <div class="chat-widget-name">AI Yashwanth</div>
-        <div class="chat-widget-status">
-          <span class="chat-status-dot"></span> Powered by Gemini
-        </div>
+        <div class="chat-widget-status"><span class="chat-status-dot"></span> Powered by Gemini</div>
       </div>
     </div>
     <button class="chat-widget-close" id="chatClose" aria-label="Close chat">
-      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-      </svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
     </button>
   </div>
   <div class="chat-messages-area" id="chatMessages">
     <div class="chat-message ai">
-      <div class="chat-bubble">
-        Hey! I'm an AI version of Yashwanth. Ask me anything about his background, projects, research, or what he's looking for. 🚀
-      </div>
+      <div class="chat-bubble">Hey! I'm an AI version of Yashwanth. Ask me anything about his background, projects, research, or what he is looking for.</div>
     </div>
     <div class="chat-suggestions" id="chatSuggestions">
       <button class="chat-suggestion">Tell me about ARIA</button>
-      <button class="chat-suggestion">What's SINA?</button>
+      <button class="chat-suggestion">What is SINA?</button>
       <button class="chat-suggestion">What roles are you looking for?</button>
-      <button class="chat-suggestion">What's your research about?</button>
+      <button class="chat-suggestion">Describe your ML experience</button>
     </div>
   </div>
   <div class="chat-input-area">
-    <textarea
-      id="chatInput"
-      class="chat-input"
-      placeholder="Ask me anything..."
-      rows="1"
-      aria-label="Chat message"
-      maxlength="500"
-    ></textarea>
-    <button class="chat-send-btn" id="chatSend" aria-label="Send message">
-      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
-      </svg>
+    <textarea id="chatInput" class="chat-input" placeholder="Ask me anything..." rows="1" maxlength="500" aria-label="Chat message"></textarea>
+    <button class="chat-send-btn" id="chatSend" aria-label="Send">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
     </button>
   </div>
 </div>
 
-<!-- Chat FAB -->
-<button class="chat-fab" id="chatFab" aria-label="Open AI chat" title="Chat with AI Yashwanth">
-  <svg width="22" height="22" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+<button class="chat-fab" id="chatFab" aria-label="Open AI chat">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
   </svg>
   <span class="chat-fab-label">Ask AI Me</span>
   <span class="chat-fab-badge" id="chatFabBadge">1</span>
 </button>
 
-<!-- ── Achievement Toasts Container ──────────────────────── -->
 <div class="achievements-container" id="achievementsContainer" aria-live="polite"></div>
-
-<!-- ── Easter Egg: Matrix Rain ────────────────────────────── -->
 <canvas class="matrix-canvas" id="matrixCanvas" aria-hidden="true"></canvas>
 
-<!-- ── JS Modules ─────────────────────────────────────────── -->
+<!-- JS -->
 <script src="js/particles.js"></script>
 <script src="js/typewriter.js"></script>
 <script src="js/counters.js"></script>
@@ -995,6 +827,5 @@
 <script src="js/visitor.js"></script>
 <script src="js/chat.js"></script>
 <script src="js/main.js"></script>
-
 </body>
 </html>
