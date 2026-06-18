@@ -144,7 +144,7 @@ ul, ol { list-style: none; }
 .btn-hero-ghost {
   background: transparent;
   color: var(--accent);
-  border: none;
+  border: 1.5px solid var(--accent);
   padding: 12px 20px;
   font-weight: 600;
 }
@@ -152,6 +152,7 @@ ul, ol { list-style: none; }
 .btn-hero-ghost:hover {
   background: var(--accent);
   color: #ffffff;
+  box-shadow: 0 12px 32px rgba(45,122,107,0.30);
 }
 
 /* ── Badge, Card, Tag ────────────────────────────────────── */
